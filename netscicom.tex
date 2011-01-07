@@ -1,0 +1,824 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[10pt,conference,letterpaper]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{epsfig}
+%% INFOCOM 2010 addition:
+\makeatletter
+\def\ps@headings{%
+\def\@oddhead{\mbox{}\scriptsize\rightmark \hfil \thepage}%
+\def\@evenhead{\scriptsize\thepage \hfil \leftmark\mbox{}}%
+\def\@oddfoot{}%
+\def\@evenfoot{}}
+\makeatother
+\pagestyle{headings} 
+
+\begin{document}
+%\pagenumbering{arabic}
+
+
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Bare Demo of IEEEtran.cls for Conferences}
+\title{Exploring Topology Dynamics of Bitorrent Network: A Temporal View}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Michael Shell}
+%\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+%Georgia Institute of Technology\\
+%Atlanta, Georgia 30332--0250\\
+%Email: http://www.michaelshell.org/contact.html}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+
+
+%\author{\IEEEauthorblockN{Mohamad Dikshie Fauzie}
+%\IEEEauthorblockA{Graduate School of\\  Media and Governance\\
+%Keio University\\ Shonan Fujisawa Campus\\
+%Kanagawa, Japan\\
+%Email: dikshie@sfc.keio.ac.jp}
+%\and
+%\IEEEauthorblockN{Achmad Husni Thamrin}
+%\IEEEauthorblockA{Graduate School of\\  Media and Governance\\
+%Keio University\\ Shonan Fujisawa Campus\\
+%Kanagawa, Japan\\
+%Email: husni@ai3.net}
+%\and
+%\IEEEauthorblockN{Jun Murai}
+%\IEEEauthorblockA{Faculty of Environment and\\  Information Studies\\
+%Keio University\\ Shonan Fujisawa Campus\\
+%Kanagawa, Japan\\
+%Email: jun@wide.ad.jp}}
+
+\author{\IEEEauthorblockN{Mohamad Dikshie Fauzie\IEEEauthorrefmark{1} \quad
+Achmad Husni Thamrin\IEEEauthorrefmark{1} \quad
+Rodney Van Meter\IEEEauthorrefmark{2} \quad
+Jun Murai\IEEEauthorrefmark{2}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Graduate School of Media and Governance} \quad
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Faculty of Environment and Information Studies\\ 
+Keio University, 252-8520 Kanagawa, Japan \\
+dikshie@sfc.wide.ad.jp \quad\quad husni@ai3.net \quad\quad rdv@sfc.wide.ad.jp \quad\quad jun@wide.ad.jp}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+
+\begin{abstract}
+This paper describes an experimental study of the overlay topologies of Bittorrent networks, focusing on the activity of the nodes of its P2P topology and especially their dynamic relationships.  
+Peer Exchange Protocol (PEX) messages are analyzed to infer topologies and their properties, capturing the variations of their behavior. 
+This study employs sampling to accommodate the large scale and high fluctuations in Bittorrent systems.  
+Our experimental results show that the node degree of Bittorrent networks follows the power-law model only for relatively short periods, as verified with the Kolmogorov-Smirnov (KS) goodness of fit test. 
+We also found that the average clustering coefficient is very low.  
+We confirm our results with simulation.  
+Our results agree in some particulars and disagree in others with isolated testbed experiments on Bittorrent, suggesting that more work is required to fully model the behavior of real-world Bittorrent networks.
+\end{abstract}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+%-------INTRODUCTION----------------------
+\section{Introduction}\label{introduction}
+Among P2P applications, Bittorrent is the most popular. 
+In 2008, P2P transfer dominated Internet traffic %\cite{ipoque}.  
+Half of all Internet traffic is P2P, and Bittorrent is the most popular P2P protocol, although recent studies suggest P2P traffic proportion to global traffic is declining \cite{labovitz2010internet}.
+Cisco visual networking index also shows the declining of proportion P2P traffic to global traffic although P2P traffic itself slowly growing in absolute terms\cite{index2010forecast} .
+This popularity reflects the robustness and efficiency of the Bittorrent protocol. These characteristics of Bittorrent comefrom its peer and piece selection strategies to distribute large files efficiently. 
+Bittorrent has now become the de-facto standard to distribute large files. 
+For example, ISO images of Linux distributions are always available on Bittorrent along with the traditional download mechanisms HTTP and FTP.  
+Because of its efficiency, some projects, for example Tribler and Vuze, have recently begun using Bittorrent for streaming content.
+
+Nowdays, the disparity between P2P application overlay and ISP underlay network is one of the most concern problem. 
+The tussle between P2P applications and ISP's originates from overlay-underlay network oblivion, which P2P systems construct overlay topology among participants in flexible and dynamic way. 
+This is commonly unfitted with underlying Internet topology and routing and ISP link cost.
+This can lead to costly inter-ISP traffic and inefficient utilization of network resources.
+Underlying topological properties itself lie behind the cost and performance concern of ISP-P2P networks.
+The mapping between a P2P overlay network topology and an ISP underlay network topology can benefit from the understanding of topological measures such as clustering coefficient, node degree, etc.
+Combining topology navigation with specific cost and performance metrics, the ISP's underlay networks and P2P overlay networks can perform more appropriate traffic control and optimization.
+Therefore understanding overlay construction network properties is important.
+Many properties of Bittorrent, such as upload/download performance and peer arrival and departure processes, have been studied \cite{guo2005measurements}, but only a few projects have assessed the topologies properties of Bittorrent.
+The Bittorrent system is different from other P2P systems.
+The Bittorrent protocol does not offer peer discovery and the tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
+While a crawler can be used in other P2P networks, such as Gnutella, in Bittorrent we cannot easily use a crawler to discover topology, making direct measurement of the topology difficult.
+
+In this paper we describe our ``in-vivo" experiment study of the impact and topological properties of Bittorrent peers, such as node degree and clustering coefficient.  
+Studying topological properties of Bittorrent peers may lead us to find a way how to improve Bittorrent systems itself e.g., robustness. 
+
+While some Bittorrent experiments have built small Bittorrent networks on testbeds such as PlanetLab and OneLab, our experiments collect data from the real world. 
+We used Bittorrent's Peer Exchange (PEX) messages to infer the overlay topology of swarms that are listed on a Bittorrent tracker claiming to be the largest Bittorrent tracker on the Internet \cite{piratebay}\cite{zhang2010unraveling}.
+Our contribution: we design a rigorous and simple method for infering Bitorrent network. 
+We show its validity by simulations.
+To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
+
+Our findings in this work shed light into puzzling that the node degree of Bittorrent networks follows the power-law model only for relatively short periods of time and Bittorrent networks do not exhibit the small-world phenomenon. 
+This surprising result may contradict earlier findings, although our simulations demonstrate this same phenomenon, suggesting that these results are not simply measurement artifacts.
+
+%------------BACKGROUND and RELATED WORK -------------------
+\section{Bittorrent Background}\label{background}
+\subsection{Overview of Bittorrent}\label{overview}
+Bittorrent is a P2P application designed to distribute large files with a focus on scalability and efficiency.  
+Before distributing a file, a \textit{metainfo} file must be created.  
+This metainfo file, also called a \textit{torrent file}, contains the size of the file, the number of pieces into which the file is divided, SHA-1 hashes for every piece to verify the integrity of received pieces, and the IP addresses and port numbers of trackers.  
+The \textit{tracker} is a central server keeping a list of all peers participating in the \textit{swarm}, which is the set of peers that are participating in distributing the same file.  
+If a peer wants to join a Bittorrent swarm, it must download the metainfo file from a well-known Bittorrent tracker, usually via HTTP. 
+After the metainfo file is read, the Bittorrent application will contact a tracker, which responds with an initial peer set of randomly selected peers, possibly including seed and leecher IP addresses and port numbers.  
+
+\begin{figure}
+\centering
+\epsfig{file=graphs/pex_2.eps, height=2in, width=3.2in}
+\caption{Simplified view of our approach. Left: At t=1, the actor gets a PEX message from peer A and
+learns that peer A is connected to peer B and C. At t=2, the actor gets  PEX messages from peers C and A. The actor
+learns that now peer A is connected to peer D. Thus the actor knows the properties of peer A at t=1 and t=2.} 
+\label{fig:pexworks}
+%\vspace{-4mm}
+\end{figure}
+
+PEX is a mechanism introduced in Bittorrent to reduce the load on the trackers.  
+With PEX, peers only need to use the tracker as an initial source of peers.   
+Based on a survey by the authors of several Bittorent client web sites, it appears that most clients began to introduce PEX in 2007 \cite{client}.
+A peer will send a PEX message to other peers that support the PEX protocol. 
+The PEX message contains the set of peers that are currently connected.
+
+Even though most Bittorrent clients support PEX,  there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
+PEX messages are exchanged between peers every 30 seconds.  
+However, some differences exist; for example, for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
+In other Bittorrent clients, the number of IP address and port pairs is decided based on the size of the PEX message.  
+This implementation difference may affect the ultimate behavior of the network.
+
+\section{Methodology and Experimental Design}\label{methodanddesign}
+The difficulties in inferring topologies in Bittorrent swarms are caused by the Bittorrent mechanism itself. 
+First, although a Bittorrent \textit{peer} may offer some information about its peers, there is no mechanism for peer \textit{discovery}.  
+Second, a peer never sends information about its connections with other peers to the tracker, so we cannot infer overlay topologies by querying or hosting a tracker.  
+The other ways to infer topologies are simulation or deploying Bittorrent nodes in a real network or in a laboratory, e.g. PlanetLab. Deploying hundreds to thousands of nodes in a real network or in the laboratory in a manner that accurately reflects the real world is a very challenging task.
+
+Here we present a simple way to get peer information from a  Bittorrent swarm. 
+We are using peer exchange (PEX) to collect peer neighbors information and describe the network formed in terms of properties such as node degree and average clustering. 
+Besides collecting data from real Bittorrent networks, we ran simulations similar to Al-Hamra \textit{et al}. \cite{al2009swarming}. 
+In these simulations, we assumed that peer arrivals and departure (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
+For simplification, we assumed that nodes are not behind a NAT.
+Since we are only interested in the construction of the overlay topology, we argue that our simulations are enough to explain the overlay properties.
+
+\subsection{Graph Sampling}
+Due to the large and dynamic nature of Bittorrent networks, it is often very difficult or impossible to capture global properties. 
+Facing this difficulty, sampling is a natural approach.
+However, collecting unbiased or representative sampling is also sometimes a challenging task.
+
+Suppose our Bittorrent overlay network is a graph $G(V,E)$ with the peers or nodes as vertices and connections between the peers as edges. 
+If we observe the graph in a time series, the time-indexed graph is $G_t = G(V_t,E_t)$.   
+We define a measurement window $[t_0,t_0 + \Delta]$ and select peers at random from the set:
+ \begin{equation}
+V_{t0,t_0+\Delta} = \bigcup_{t=t_0}^{t_0+\Delta} V_t.
+ \label{eq:samplingvertices}
+ \end{equation}
+
+Stutzbach \textit{et al}. \cite{stutzbach2007sampling} showed that  (\ref{eq:samplingvertices}) is only appropriate for exponential distributed  peer session lengths and as we know from existing measurements Bittorrent networks peer session lengths have very high variation \cite{guo2005measurements}.  
+Equation.\ref{eq:samplingvertices} focuses on sampling peers instead of peer properties. 
+To cope with that problem we must be able to sample from the same peer more than once at different points in time \cite{stutzbach2007sampling}. 
+We may rewrite our desired sample as
+\begin{equation}
+\ v_{i,t} \in V_t  , t \in [t_0, t_0 + \Delta].
+\label{eq:samplingvertices2}
+\end{equation}
+Number of peers in a swarm that observed by our client are our population. 
+Sampled peers set is number of peers that exchange PEX messages with our client.
+Our sampled peers set through PEX messages exchange can observe about $70\%$ of peers in a population.
+This observation is consistent with \cite{wu2010understanding}.
+
+%--------------- EXPERIMENT METHODOLOGY ----------------
+\subsection{Experiment Methodology}
+We crawled top 30 TV series torrent from thepiratebay which claimed as the biggest torrent tracker on the Internet.
+%We joined to that top 30 TV series swarms and log the connection between peers. 
+%Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
+Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library  (used by uTorrent, Deluge, and other Bittorrent clients).
+We modified rasterbar's libtorrent client to become connection greedy, i.e., try to connect to every peer about whom it received information from the tracker and other peers,remove the connection limit, and log PEX messages received from other clients.
+PEX messages sent from old versions of Azureus Bittorrent client contain not only currently connected peers but also its historically connected peers. 
+We can distinguished Azureus Bittorrent client from log files.
+To cope with this situation, we do not include old Azureus client in data processing. 
+Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation \ref{eq:samplingvertices2}.
+
+Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
+In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
+Instantaneous snapshots is taken at exact time point thus capturing only a few nodes and links.
+In this paper, we study network dynamics by continously taking network snapshots with the duration $\tau$ as time evolves and show them as time series.
+A snapshot captures all participating peers and their connections within a particular time interval, from which a graph can be generated.
+The snapshot duration may have minor effects on analyzing slowly changing networks.
+However, in a P2P networks, the characteristics of the network topology vary greatly with respect to the time scale of the snapshot duration as mentioned in \cite{stutzbach2008characterizing}.
+We consider $\tau=3 $ minutes as minimum session length in the Bittorrent \cite{stutzbach2006understanding}. 
+
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/cdf-num.eps, height=2in, width=3.2in}
+\caption{CDF number of peers for all data sets. It is clearly show high variation number of peers in every swarm.} 
+\label{fig:num_peers}
+\end{figure}
+
+
+
+
+%----------------- DATA ANALYSIS BACKGROUND --------------------
+\subsection{Data Analysis Background}
+Many realistic networks exhibit the scale-free property \cite{clauset2009power}, though we note that ``scale-free" is not a complete description of a network topology \cite{doyle2005robust}\cite{mahadevan2006systematic}. 
+It has been suggested that Bittorrent networks also might have scale-free characteristics \cite{dale2008evolution}. 
+In this paper, we test this hypothesis. 
+
+In a scale-free network, the degree distribution follows a power-law distribution.   
+A power-law distribution is quite a natural model and can be generated from simple generative processes \cite{mitzenmacher2004brief}, and power-law models appear in many areas of science \cite{clauset2009power} \cite{mitzenmacher2004brief}. 
+Unfortunately, we argue that `tit-for-tat' mechanism in Bittorrent will make a node prefer to attach to other nodes that provide higher download rate rather than higher degree node therefore we need to know the current state of node degree distribution in real Bittorrent systems.
+Data with power-law distributed requires special of estimation because of their specific features: slow than exponential decay to zero, violation cramer condition, possible non-existent some moments, and sparse observation in tail \cite{markovich2007nonparametric}.
+We argue that consecutive of instantaneous node degree properties through power-law analysis combine with consecutive of instantaneous clustering coefficient can reveal the dynamics of Bitorrent overlay topologies. 
+We will address clustering coefficient in next section. 
+
+Let $x$ be the quantity of distribution. 
+A power-law distribution can be described as
+\begin{equation}
+Pr[X\ge x] \propto cx^{-\alpha}.
+\label{eq:powerlaw}
+\end{equation}
+where $\alpha$ is commonly called the scaling parameter. 
+The scaling parameter usually lies
+in the range $1.8<\alpha<3.5$.
+
+In discrete form, the above formula can be expressed as:
+\begin{equation}
+p(x) = Pr(X=x) = Cx^{- \alpha}.
+\label{eq:powerlawdiscrete}
+\end{equation}
+This distribution diverges on zero, therefore there must be a lower bound of $x$ called $x_{min} > 0$ that holds for the sample to be fitted by a power-law. 
+If we want to estimate a good power-law scaling parameter then we must also have a good $x_{min}$ estimation. 
+
+Normalizing (\ref{eq:powerlawdiscrete})  we get
+\begin{equation}
+p(x)=\frac{x^{- \alpha}}{\zeta(\alpha,x_{min})}.
+\end{equation} 
+where $\zeta$ is the Hurwitz zeta function. %defined as
+
+The most common way to fit empirical data to a power-law is to take the logarithm of equation \ref{eq:powerlaw} and draw a straight line on a logarithmic plot \cite{mitzenmacher2004brief}.  
+We use maximum likelihood to estimate the scaling parameter $\alpha$ of power-law as described detail in \cite{clauset2009power}.  
+This approach is accurate to estimate the scaling parameter in the limit of large sample size.  
+We will not describe the calculations in detail; the interested reader is referred to Appendix B in \cite{clauset2009power} for calculations of both $\alpha$ and $x_{min}$.
+
+%--------------- EXPERIMENT RESULT -------------------------
+\section{Experiment Results}\label{result}
+The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
+
+\subsection{Node Degree}
+The degree of a node in a network is the number of edges connected to that node. 
+If we define $p_k$ as the  fraction of nodes in the network that have degree $k$, then $p_k$ is the probability that a node chosen uniformly at random has degree $k$. 
+If we plot a histogram of $p_k$ then this histogram is the degree distribution for  the network. 
+Instead of a histogram plot,  we show node degree data in cumulative distribution  function (CDF) plot which can be expressed as:
+\begin{equation}
+P_k = \sum_{k'=k}^{\infty} p_{k'}.
+\end{equation}
+The CDF plot has advantages over the node degree histogram because it does not suffer from binning problems  \cite{newman2003structure}.
+
+We do not know a priori if our data are power-law distributed. 
+Simply calculating the estimated scaling parameter does not give indication of  whether the power-law is a good model.  
+To test the applicability of a power-law distribution, we use the goodness-of-fit test as described by Clauset \textit{et al}. \cite{clauset2009power}. 
+First, we fit data to the power-law model and calculate the Kolmogorov-Smirnov (KS) statistic for this fit. 
+Second, we generate power-law synthetic data sets based on the scaling parameter $\alpha$ estimation and the lower bound of $x_{min}$. 
+We fit the synthetic data to a power-law model and calculate the KS statistics, then count what fraction of the resulting statistics is larger than the value for the measured data set. 
+This fraction is called the $p$ value.  
+If $p \geq 0.1$ then a power-law model is a good model for the data set and if $p < 0.1$ then power-law is not a good model \cite{clauset2009power}.
+
+We mention before, a good estimation for $x_{min}$ is important to get overall good fitting.
+Too small $x_{min}$ will cause we only fit to the body of distribution.
+Too high $x_{min}$ will cause we only fit to the tail of distribution.
+Figure \ref{fig:fitting} shows the fitting problem example for data set torrent1 and torrent3.
+In torrent1 the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
+While in the same graph we also show the optimum $x_{min}=1$ for torrent3 and the fit visually seems good.
+Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
+The $p$ value more than $0.1$ maximum is only around $60\%$ therefore It clearly shows that node degree in Bittorrent topology does not always follow power-law distribution.
+
+However these data sets must be interpreted with care. 
+The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size $n=50$ \cite{clauset2009power}. 
+Also, for the goodness-of-fit test, a large $p$ value does not mean the power-law model is the correct distribution for data sets, because there may be other distributions that match the data sets and there is always a possibility that small value of $p$ the distribution will follow a power-law even though the power-law is not the right model\cite{clauset2009power}. 
+We address these concerns next.
+
+\begin{figure}
+\centering
+\epsfig{file=matlab/powerlaws_full_v0.0.9-2010-01-24/output.eps, width=3.2in}
+\caption{CDF node degree fit for snapshots of two torrents, with three fits shown in logarithm scale. Torrent1: for $x_{min}=1$ , $\alpha = 2.9$, and $p=0.01$. For $x_{min}=2$ , $\alpha = 2.11$, and $p = 0.01$. Torrent3: for $x_{min}=1$, $\alpha = 2.1$, and $p = 0.1$. }
+\label{fig:fitting}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/cdf-total-p.eps, height=2in, width=3.2in}
+\caption{CDF p-value. It is show that most of Bittorrent network does not fit to the power-law distribution.} 
+\label{fig:cdf-p}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/cdf-total-lr.eps, height=2in, width=3.2in}
+\caption{CDF of $\rho$ value for nested model comparison power-law and power-law with exponential cutoff.} 
+\label{fig:cdf-lr}
+\end{figure}
+
+
+\subsection{Alternative Distributions}
+Even if we have estimated the power-law parameter properly and the fit is decent, we found many points in our data sets  do not fall to into power-law model.
+Now  we use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation and the fit is decent.
+The general likelihood ratio test statistic asymptotically has a standard Gaussian distribution when the competing models are equally good.
+
+We now hypothesize that the the smaller family of power-law distributions may give a better fit to our data sets. 
+We only consider power-law model and power-law with exponential cut-off model as example to show model selection.
+Model selection for power-law model and power-law with exponential cut-off is a kind of nested model selection problem. 
+In a nested model selection,  there is always a possibility that a bigger family (power-law) can provide as good a fit as the smaller family (power-law with exponential cut-off). 
+To distinguish between such models, a modified likelihood ratio test is needed. 
+The nested case model asymptotically adopts chi-squared distribution.  
+Vuong \cite{vuong1989likelihood} provides the significance value ($\rho$ value) for likelihood ratio test. 
+In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
+Figure \ref{fig:cdf-lr} shows the cummulative distribution function of  $\rho$ value. 
+It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
+Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
+We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
+We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
+This sparse observation clearly describe that comparing the models to other models is very complex task in highly dynamics networks.
+
+\subsection{Clustering Coefficient}\label{clusteringcoef}
+
+Clustering describes robustness in topology. 
+It has practical implications; for example, if node A is connected to node B and node B to node C, then there is a probability that node A will also be
+connected to node C, improving the robustness of the network against the failure of a connection.  
+Clustering is quantified by a node clustering coefficient as follows:
+\begin{equation}
+c_v = \frac{2T(v)}{deg(v) (deg(v)-1))}
+\end{equation} 
+and for the whole graph the clustering coefficient is
+\begin{equation}
+C = \frac{1}{n} \sum_{v \in G} c_v.
+\end{equation}
+A larger clustering coefficient represents more clustering at nodes in the graph therefore clustering coefficient expresses the local robustness of the network.
+The disctinction between a random and a non-random graph can be measured by clustering-coefficient \cite{watts1998collective}.
+Newman \cite{newman2003properties} mentions that virus outbreaks spread faster in highly clustered networks. A network that has a high clustering coefficient and a small average path length is called a \textit{small-world} model \cite{watts1998collective}.
+In Bittorrent systems, a previous study \cite{legout2007clustering} mentioned the possibility that Bittorrent's efficiently partly comes from the clustering of peers.
+Figure \ref{fig:cdf-clustering} shows the CDF clustering coefficient value of our data sets.
+The coefficient clustering values are very sparse. 
+It is also shows very low clustering coefficient values. 
+It is between $70\% - 90\%$ the clustering coefficient values under $0.1$, while one data set show only $40\%$. 
+This observation is same as observed by Dale \textit{et al}. \cite{dale2008evolution}.
+From low clustering coefficient point of view, the Bittorrent topologies seem near to random graph.
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/cdf-clustering.eps, height=2in, width=3.2in}
+\caption{CDF clustering coefficient. It is clearly show that Bittorrent networks have low clustering coefficient.} 
+\label{fig:cdf-clustering}
+\end{figure}
+
+
+\section{Confirmation via Simulation}\label{simulation}
+
+Here we use simulations to compare the overlay topology properties based  on our real-world experiments. 
+We set the maximum peer set size to 80, the minimum number of neighbors to 20, and the maximum number of outgoing connection to 80. In our simulation, the result is quite easy to get since we are on a controlled system;  we can directly read the  global topology properties from our results. 
+We also have the simulated PEX messages. We compare the global overlay topology properties as the final result from simulator with the overlay topology that we get from PEX on the same simulator.
+Figure. \ref{fig:simulation} shows the $\alpha$ estimate and $p$ value both for the global result and the PEX result from our simulator. 
+It clearly shows that global result and the PEX result from the simulator produce very low $p$ values. 
+We calculate the Spearman correlation for both $\alpha$ values from the global result and the PEX result. 
+The Spearman rank correlation coefficient is a non-parametric correlation measure that assesses the relationship between two variables
+without making any assumptions of a monotonic function.
+The Spearman rank correlation test gives $0.38 \leq \rho \leq 0.5$, which we consider to be moderately well correlated. 
+
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/simulation.eps, height=2in, width=3.2in}
+\caption{$\alpha$ estimation and $p$ value for global topology and topology inferred from PEX where both done in simulator.
+Simulator confirms that PEX method can be used to estimate $\alpha$.} 
+\label{fig:simulation}
+\end{figure}
+
+
+\section{Related Work}\label{relatedworks}
+Bittorrent protocol performance has been explored deeply by several researchers \cite{guo2005measurements}\cite{legout2006rarest}\cite{pouwelse2004measurement}\cite{tian2007modeling}.  
+The rarest first algorithm was discussed in \cite{legout2006rarest}, average download speed was discussed in \cite{pouwelse2004measurement}, peer arrival and departure process was discussed in \cite{guo2005measurements},and the effect of distributon of the peers on the download job progress was discussed in \cite{tian2007modeling}.
+The huge numbers of peers send P2P download request to a random target on the Internet and anti-P2P companies inject bogus peers through PEX was discussed in \cite{li2010measurement}. Higher upload-to-download ratios in  Bittorrent darknet was discussed in \cite{zhang2010bittorrent}.
+Although we know that the topology can have a large impact on performance, to date only a few papers have addressed the issue.
+Urvoy \textit{et al}. \cite{urvoy2007impact} used a discrete event simulator to show that the time to distribute a file in a Bittorrent swarm has a strong relation to the overlay topology.  
+Al-Hamra et al. \cite{al2007understanding}, also using discrete event simulator, showed that Bittorrent creates a robust overlay topology and the overlay topology formed is not random. 
+Al-Hamra \textit{et al}. \cite{al2007understanding} also show that peer exchange (PEX) generates a chain-like overlay with a large diameter. 
+Dale \textit{et al}. \cite{dale2008evolution}, in an experimental study on PlanetLab, show that in the initial stage of Bittorrent a peer will get a random peer list from the tracker. 
+They found that a network of peers that unchoked each other is scale-free and the node degree follows a power-law distribution with exponent approximately 2. 
+Dale \textit{et al}. \cite{dale2008evolution} also showed that the path length formed in Bittorrent swarms averages four hops.  
+However, little work has been done on determining that topology  in the real world. 
+Our results agree with previous research \cite{dale2008evolution} in some areas and disagree in others, perhaps for two reasons.
+First, power-law claims must be handled carefully. Many steps are required to confirm the power-law behavior, including alternative model checking, and we must be prepared for disappoinment since other models may give a better fit. 
+Second, our methodology relies on real work measurement combine with simulation for validation. 
+We are using real swarms from a real and operational Bittorrent tracker. This real world measurement will reflect different type of clients connected to our swarm and each client has a different behavior. 
+Each client might run on a different operating system, and of course clients are spread geographically. 
+We also face difficult-to-characterize network realities such as NAT and firewalls. 
+Our ability to reproduce key aspects of the topology dynamics suggests that these factors have only limited impact on the topology, somewhat to our surprise. 
+
+\section{Conclusion and Future Work}\label{conclude}
+We have investigated the properties of Bittorrent overlay topologies from the point of view of the peer exchange protocol using real swarms from a real and operational Bittorrent tracker on the Internet. 
+We obtain instantaneous snapshots of the active topology of the Bittorrent network over a month.
+We cope with the dynamics of the overlay by sampling peer properties. 
+Unlike \cite{dale2008evolution}, our findings of this work is that the node degree of the graph formed in Bittorrent swarm using PEX does not follow a power-law distribution independent of time and changes to the number of peers although we see same observation which is low clustering coefficient.
+Some areas of improvement that we have identified for future work are: correlation analysis number of peers with $\alpha$ and $p$ value, confirming our observations for larger file sizes, continued characterization and of NATed peers, wider model selection and comparing the results with simulation for global graph properties such as distance distribution and spectrum.
+We hope to incorporate these properties into a complete $dK$ series for the evolution of a real-world Bittorrent overlay as it evolves over time \cite{mahadevan2006systematic}. 
+We conclude that further work throughoutthe community is necessary to continue to improve the agreement of simulation and controlled experiment with the real world, and that such work will impact our understanding of Bittorrent performance and its effects on the Internet.
+
+
+\section*{Acknowledgements}
+This research was supported by The Ministry of Education, Culture, Sports, Science
+and Technology of Japan. 
+The Authors would like to thank to Daniel Stutzbach for help on graph sampling, Aaron Clauset for power-law Matlab code, Sue Moon and Joe Touch for suggestions.
+
+\bibliographystyle{IEEEtran}
+\bibliography{netscicom}
+
+\end{document}
+
