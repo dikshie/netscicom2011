@@ -601,7 +601,7 @@ We consider $\tau=3 $ minutes as minimum session length in the Bittorrent \cite{
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/cdf-num.eps, height=2in, width=3.2in}
-\caption{CDF number of peers for all data sets. It is clearly show high variation number of peers in every swarm.} 
+\caption{CDF number of peers for every swarm during measurement. It is clearly show high variation number of peers in every swarm due to churn in Bittorrent network.} 
 \label{fig:num_peers}
 \end{figure}
 
@@ -652,7 +652,9 @@ We will not describe the calculations in detail; the interested reader is referr
 
 %--------------- EXPERIMENT RESULT -------------------------
 \section{Experiment Results}\label{result}
-The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
+CDF number of peers for every swarm during measurement show in figure \ref{fig:num_peers}. 
+It is clearly that number of peers have high variability due churn in Bittorrent networks. 
+%The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
 
 \subsection{Node Degree}
 The degree of a node in a network is the number of edges connected to that node. 
@@ -680,7 +682,8 @@ Figure \ref{fig:fitting} shows the fitting problem example for data set torrent1
 In torrent1 the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
 While in the same graph we also show the optimum $x_{min}=1$ for torrent3 and the fit visually seems good.
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
-The $p$ value more than $0.1$ maximum is only around $60\%$ therefore It clearly shows that node degree in Bittorrent topology does not always follow power-law distribution.
+The $p$ value more than $0.1$ maximum is only around $70\%$ therefore It clearly shows that node degree in Bittorrent topology does not always follow power-law distribution.
+A magnified view CDF at p-value=$0.1$ is  shown in figure \ref{fig:cdf-p-01}.
 
 However these data sets must be interpreted with care. 
 The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size $n=50$ \cite{clauset2009power}. 
@@ -694,7 +697,6 @@ We address these concerns next.
 \label{fig:fitting}
 \end{figure}
 
-
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/cdf-total-p.eps, height=2in, width=3.2in}
@@ -704,11 +706,24 @@ We address these concerns next.
 
 \begin{figure}
 \centering
-\epsfig{file=netscicom-graphs/20-data/cdf-total-lr.eps, height=2in, width=3.2in}
-\caption{CDF of $\rho$ value for nested model comparison power-law and power-law with exponential cutoff.} 
-\label{fig:cdf-lr}
+\epsfig{file=netscicom-graphs/20-data/cdf-01-p.eps, height=2in, width=3.2in}
+\caption{CDF at p-value=0.1 for every Bittorrent swarm. It is clearly show high variation of p-value.} 
+\label{fig:cdf-p-01}
 \end{figure}
 
+%\begin{figure}
+%\centering
+%\epsfig{file=netscicom-graphs/20-data/cdf-total-lr.eps, height=2in, width=3.2in}
+%\caption{CDF of $\rho$ value for nested model comparison power-law and power-law with exponential cutoff.} 
+%\label{fig:cdf-lr}
+%\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/cdf-01-lr.eps, height=2in, width=3.2in}
+\caption{CDF at $\rho$ value $=0.1$  for nested model comparison power-law and power-law with exponential cutoff.} 
+\label{fig:cdf-lr}
+\end{figure}
 
 \subsection{Alternative Distributions}
 Even if we have estimated the power-law parameter properly and the fit is decent, we found many points in our data sets  do not fall to into power-law model.
@@ -723,12 +738,14 @@ To distinguish between such models, a modified likelihood ratio test is needed.
 The nested case model asymptotically adopts chi-squared distribution.  
 Vuong \cite{vuong1989likelihood} provides the significance value ($\rho$ value) for likelihood ratio test. 
 In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
-Figure \ref{fig:cdf-lr} shows the cummulative distribution function of  $\rho$ value. 
+Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
 It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
-Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
-We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
+Some swarms have CDF at $\rho$ value $=0.1$ more than $80\%$.
+It means that for those swarms the power-law with exponential cut-off model can fit well.
+%Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
+%We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
 We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
-This sparse observation clearly describe that comparing the models to other models is very complex task in highly dynamics networks.
+This sparse observation clearly describe that comparing the model to other models is very complex task in highly dynamics networks.
 
 \subsection{Clustering Coefficient}\label{clusteringcoef}
 
@@ -750,7 +767,7 @@ In Bittorrent systems, a previous study \cite{legout2007clustering} mentioned th
 Figure \ref{fig:cdf-clustering} shows the CDF clustering coefficient value of our data sets.
 The coefficient clustering values are very sparse. 
 It is also shows very low clustering coefficient values. 
-It is between $70\% - 90\%$ the clustering coefficient values under $0.1$, while one data set show only $40\%$. 
+It is between $70\% - 90\%$ the clustering coefficient values under $0.1$, while one data set show around $40\%$. 
 This observation is same as observed by Dale \textit{et al}. \cite{dale2008evolution}.
 From low clustering coefficient point of view, the Bittorrent topologies seem near to random graph.
 \begin{figure}
