@@ -477,9 +477,9 @@ In 2008, P2P transfer dominated Internet traffic %\cite{ipoque}.
 Half of all Internet traffic is P2P, and Bittorrent is the most popular P2P protocol, although recent studies suggest P2P traffic proportion to global traffic is declining \cite{labovitz2010internet}.
 Cisco visual networking index also shows the declining of proportion P2P traffic to global traffic although P2P traffic itself slowly growing in absolute terms\cite{index2010forecast} .
 This popularity reflects the robustness and efficiency of the Bittorrent protocol. These characteristics of Bittorrent comefrom its peer and piece selection strategies to distribute large files efficiently. 
-Bittorrent has now become the de-facto standard to distribute large files. 
-For example, ISO images of Linux distributions are always available on Bittorrent along with the traditional download mechanisms HTTP and FTP.  
-Because of its efficiency, some projects, for example Tribler and Vuze, have recently begun using Bittorrent for streaming content.
+%Bittorrent has now become the de-facto standard to distribute large files. 
+%For example, ISO images of Linux distributions are always available on Bittorrent along with the traditional download mechanisms HTTP and FTP.  
+%Because of its efficiency, some projects, for example Tribler and Vuze, have recently begun using Bittorrent for streaming content.
 
 Nowdays, the disparity between P2P application overlay and ISP underlay network is one of the most concern problem. 
 The tussle between P2P applications and ISP's originates from overlay-underlay network oblivion, which P2P systems construct overlay topology among participants in flexible and dynamic way. 
@@ -488,14 +488,14 @@ This can lead to costly inter-ISP traffic and inefficient utilization of network
 Underlying topological properties itself lie behind the cost and performance concern of ISP-P2P networks.
 The mapping between a P2P overlay network topology and an ISP underlay network topology can benefit from the understanding of topological measures such as clustering coefficient, node degree, etc.
 Combining topology navigation with specific cost and performance metrics, the ISP's underlay networks and P2P overlay networks can perform more appropriate traffic control and optimization.
-Therefore understanding overlay construction network properties is important.
+%Therefore understanding overlay construction network properties is important.
 Many properties of Bittorrent, such as upload/download performance and peer arrival and departure processes, have been studied \cite{guo2005measurements}, but only a few projects have assessed the topologies properties of Bittorrent.
 The Bittorrent system is different from other P2P systems.
 The Bittorrent protocol does not offer peer discovery and the tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
 While a crawler can be used in other P2P networks, such as Gnutella, in Bittorrent we cannot easily use a crawler to discover topology, making direct measurement of the topology difficult.
 
 In this paper we describe our ``in-vivo" experiment study of the impact and topological properties of Bittorrent peers, such as node degree and clustering coefficient.  
-Studying topological properties of Bittorrent peers may lead us to find a way how to improve Bittorrent systems itself e.g., robustness. 
+%Studying topological properties of Bittorrent peers may lead us to find a way how to improve Bittorrent systems itself e.g., robustness. 
 
 While some Bittorrent experiments have built small Bittorrent networks on testbeds such as PlanetLab and OneLab, our experiments collect data from the real world. 
 We used Bittorrent's Peer Exchange (PEX) messages to infer the overlay topology of swarms that are listed on a Bittorrent tracker claiming to be the largest Bittorrent tracker on the Internet \cite{piratebay}\cite{zhang2010unraveling}.
