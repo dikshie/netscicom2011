@@ -579,15 +579,18 @@ This observation is consistent with \cite{wu2010understanding}.
 
 %--------------- EXPERIMENT METHODOLOGY ----------------
 \subsection{Experiment Methodology}
-We crawled top 30 TV series torrent from thepiratebay which claimed as the biggest torrent tracker on the Internet.
+We crawled top 35 TV series torrent from thepiratebay which claimed as the biggest torrent tracker on the Internet.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
 Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library  (used by uTorrent, Deluge, and other Bittorrent clients).
 We modified rasterbar's libtorrent client to become connection greedy, i.e., try to connect to every peer about whom it received information from the tracker and other peers,remove the connection limit, and log PEX messages received from other clients.
-PEX messages sent from old versions of Azureus Bittorrent client contain not only currently connected peers but also its historically connected peers. 
-We can distinguished Azureus Bittorrent client from log files.
-To cope with this situation, we do not include old Azureus client in data processing. 
+PEX messages sent from old versions of Vuze Bittorrent client contain not only currently connected peers but also its historically connected peers. 
+We can distinguished Vuze Bittorrent client from log files.
+To cope with this situation, we do not include old Vuze client in data processing. 
 Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation \ref{eq:samplingvertices2}.
+We also study source code two popular Bittorrent clients which are uTorrent (using rasterbar libtorrent source code) and Vuze in term of peer connectivity to other client after getting random node's IP address from tracker.
+Both clients by default try to connect to node candidates randomly without any preference thus we have random data sets.
+It implies that our data set independent to measurement location and limited number of measurement location.
 
 Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
 In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
