@@ -507,12 +507,12 @@ Our findings in this work shed light into puzzling that the node degree of Bitto
 This surprising result may contradict earlier findings and our simulations demonstrate this same phenomenon, suggesting that these results are not simply measurement artifacts.
 
 %------------BACKGROUND and RELATED WORK -------------------
-\section{Bittorrent Background}\label{background}
-\subsection{Overview of Bittorrent}\label{overview}
+\section{Bittorrent Peer Exchange}\label{background}
+%\subsection{Overview of Bittorrent}\label{overview}
 Bittorrent is a P2P application designed to distribute large files with a focus on scalability and efficiency.  
-Before distributing a file, a \textit{metainfo} file must be created.  
-This metainfo file, also called a \textit{torrent file}, contains the size of the file, the number of pieces into which the file is divided, SHA-1 hashes for every piece to verify the integrity of received pieces, and the IP addresses and port numbers of trackers.  
-The \textit{tracker} is a central server keeping a list of all peers participating in the \textit{swarm}, which is the set of peers that are participating in distributing the same file.  
+%Before distributing a file, a \textit{metainfo} file must be created.  
+%This metainfo file, also called a \textit{torrent file}, contains the size of the file, the number of pieces into which the file is divided, SHA-1 hashes for %every piece to verify the integrity of received pieces, and the IP addresses and port numbers of trackers.  
+%The \textit{tracker} is a central server keeping a list of all peers participating in the \textit{swarm}, which is the set of peers that are participating in %distributing the same file.  
 If a peer wants to join a Bittorrent swarm, it must download the metainfo file from a well-known Bittorrent tracker, usually via HTTP. 
 After the metainfo file is read, the Bittorrent application will contact a tracker, which responds with an initial peer set of randomly selected peers, possibly including seed and leecher IP addresses and port numbers.  
 
@@ -526,19 +526,18 @@ learns that now peer A is connected to peer D. Thus the actor knows the properti
 %\vspace{-4mm}
 \end{figure}
 
-PEX is a mechanism introduced in Bittorrent to reduce the load on the trackers.  
+PEX is a mechanism introduced in Bittorrent to discover other peers in the swarm, in which two connected peers exchange messages containing a set of connected peers.  
 With PEX, peers only need to use the tracker as an initial source of peers.   
 Based on a survey by the authors of several Bittorent client web sites, it appears that most clients began to introduce PEX in 2007 \cite{client}.
-A peer will send a PEX message to other peers that support the PEX protocol. 
-The PEX message contains the set of peers that are currently connected.
+%A peer will send a PEX message to other peers that support the PEX protocol. 
+%The PEX message contains the set of peers that are currently connected.
 
-Even though most Bittorrent clients support PEX,  there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
-PEX messages are exchanged between peers every 30 seconds.  
-However, some differences exist; for example, for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
+However,  there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
+Therefore there are differences, such as for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
 In other Bittorrent clients, the number of IP address and port pairs is decided based on the size of the PEX message.  
 This implementation difference may affect the ultimate behavior of the network.
 
-\section{Methodology and Experimental Design}\label{methodanddesign}
+\section{Methodology and Experiment Design}\label{methodanddesign}
 The difficulties in inferring topologies in Bittorrent swarms are caused by the Bittorrent mechanism itself. 
 First, although a Bittorrent \textit{peer} may offer some information about its peers, there is no mechanism for peer \textit{discovery}.  
 Second, a peer never sends information about its connections with other peers to the tracker, so we cannot infer overlay topologies by querying or hosting a tracker.  
