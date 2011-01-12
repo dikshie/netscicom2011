@@ -492,7 +492,7 @@ Combining topology navigation with specific cost and performance metrics, the IS
 %Therefore understanding overlay construction network properties is important.
 Many properties of Bittorrent, such as upload/download performance and peer arrival and departure processes, have been studied \cite{guo2005measurements}, but only a few projects have assessed the topologies properties of Bittorrent.
 The Bittorrent system is different from other P2P systems.
-The Bittorrent protocol does not offer peer discovery and the tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
+The Bittorrent protocol does not offer peer discovery and the Bittorrent tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
 While a crawler can be used in other P2P networks, such as Gnutella, in Bittorrent we cannot easily use a crawler to discover topology, making direct measurement of the topology difficult.
 
 In this paper we describe our ``in-vivo" experiment study of the impact and topological properties of Bittorrent peers, such as node degree and clustering coefficient.  
@@ -550,6 +550,14 @@ Besides collecting data from real Bittorrent networks, we ran simulations simila
 In these simulations, we assumed that peer arrivals and departure (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
 Since we are only interested in the construction of the overlay topology, we argue that our simulations are enough to explain the overlay properties.
+Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
+%In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
+Instantaneous snapshots is taken at exact time point thus capturing only a few nodes and links.
+In this paper, we study network dynamics by continously taking network snapshots with the duration $\tau$ as time evolves and show them as time series.
+A snapshot captures all participating peers and their connections within a particular time interval, from which a graph can be generated.
+The snapshot duration may have minor effects on analyzing slowly changing networks.
+However, in a P2P networks, the characteristics of the network topology vary greatly with respect to the time scale of the snapshot duration as mentioned in \cite{stutzbach2008characterizing}.
+We consider $\tau=3 $ minutes as minimum session length in the Bittorrent \cite{stutzbach2006understanding}. 
 
 \subsection{Graph Sampling}
 Due to the large and dynamic nature of Bittorrent networks, it is often very difficult or impossible to capture global properties. 
@@ -588,18 +596,9 @@ PEX messages sent from old versions of Vuze Bittorrent client contain not only c
 We can distinguished Vuze Bittorrent client from log files.
 To cope with this situation, we do not include old Vuze client in data processing. 
 Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation \ref{eq:samplingvertices2}.
-We also study source code two popular Bittorrent clients which are uTorrent (using rasterbar libtorrent source code) and Vuze in term of peer connectivity to other client after getting random node's IP address from tracker.
+We also study source code two popular Bittorrent clients which are uTorrent (using rasterbar libtorrent source code) and Vuze in term of peer connectivity to other client after getting random peer's IP address from tracker.
 Both clients by default try to connect to node candidates randomly without any preference thus we have random data sets.
 It implies that our data set independent to measurement location and limited number of measurement location.
-
-Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
-In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
-Instantaneous snapshots is taken at exact time point thus capturing only a few nodes and links.
-In this paper, we study network dynamics by continously taking network snapshots with the duration $\tau$ as time evolves and show them as time series.
-A snapshot captures all participating peers and their connections within a particular time interval, from which a graph can be generated.
-The snapshot duration may have minor effects on analyzing slowly changing networks.
-However, in a P2P networks, the characteristics of the network topology vary greatly with respect to the time scale of the snapshot duration as mentioned in \cite{stutzbach2008characterizing}.
-We consider $\tau=3 $ minutes as minimum session length in the Bittorrent \cite{stutzbach2006understanding}. 
 
 \begin{figure}
 \centering
