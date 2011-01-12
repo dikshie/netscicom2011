@@ -538,15 +538,15 @@ In other Bittorrent clients, the number of IP address and port pairs is decided 
 This implementation difference may affect the ultimate behavior of the network.
 
 \section{Methodology and Experiment Design}\label{methodanddesign}
-The difficulties in inferring topologies in Bittorrent swarms are caused by the Bittorrent mechanism itself. 
-First, although a Bittorrent \textit{peer} may offer some information about its peers, there is no mechanism for peer \textit{discovery}.  
-Second, a peer never sends information about its connections with other peers to the tracker, so we cannot infer overlay topologies by querying or hosting a tracker.  
-The other ways to infer topologies are simulation or deploying Bittorrent nodes in a real network or in a laboratory, e.g. PlanetLab. Deploying hundreds to thousands of nodes in a real network or in the laboratory in a manner that accurately reflects the real world is a very challenging task.
+%The difficulties in inferring topologies in Bittorrent swarms are caused by the Bittorrent mechanism itself. 
+%First, although a Bittorrent \textit{peer} may offer some information about its peers, there is no mechanism for peer \textit{discovery}.  
+%Second, a peer never sends information about its connections with other peers to the tracker, so we cannot infer overlay topologies by querying or %hosting a tracker.  
+%The other ways to infer topologies are simulation or deploying Bittorrent nodes in a real network or in a laboratory, e.g. PlanetLab. Deploying %hundreds to thousands of nodes in a real network or in the laboratory in a manner that accurately reflects the real world is a very challenging task.
 
-Here we present a simple way to get peer information from a  Bittorrent swarm. 
-We are using peer exchange (PEX) to collect peer neighbors information and describe the network formed in terms of properties such as node degree and average clustering. 
+%Here we present a simple way to get peer information from a  Bittorrent swarm. 
+We use PEX to collect peer neighbors information  (see figure.\ref{fig:pexworks} and then we describe the network formed in terms of properties such as node degree and average clustering. 
 Besides collecting data from real Bittorrent networks, we ran simulations similar to Al-Hamra \textit{et al}. \cite{al2009swarming}. 
-In these simulations, we assumed that peer arrivals and departure (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
+In these simulations, we assumed that peer arrivals and departures (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
 Since we are only interested in the construction of the overlay topology, we argue that our simulations are enough to explain the overlay properties.
 Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
