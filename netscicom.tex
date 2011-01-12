@@ -804,20 +804,23 @@ Simulator confirms that PEX method can be used to estimate $\alpha$.}
 \section{Related Work}\label{relatedworks}
 Bittorrent protocol performance has been explored deeply by several researchers \cite{guo2005measurements}\cite{legout2006rarest}\cite{pouwelse2004measurement}\cite{tian2007modeling}.  
 The rarest first algorithm was discussed in \cite{legout2006rarest}, average download speed was discussed in \cite{pouwelse2004measurement}, peer arrival and departure process was discussed in \cite{guo2005measurements},and the effect of distributon of the peers on the download job progress was discussed in \cite{tian2007modeling}.
-The huge numbers of peers send P2P download request to a random target on the Internet and anti-P2P companies inject bogus peers through PEX was discussed in \cite{li2010measurement}. Higher upload-to-download ratios in  Bittorrent darknet was discussed in \cite{zhang2010bittorrent}.
+The huge numbers of peers send P2P download request to a random target on the Internet and anti-P2P companies inject bogus peers through PEX was discussed in \cite{li2010measurement}.
+Higher upload-to-download ratios in  Bittorrent darknet was discussed in \cite{zhang2010bittorrent}.
 Although we know that the topology can have a large impact on performance, to date only a few papers have addressed the issue.
 Urvoy \textit{et al}. \cite{urvoy2007impact} used a discrete event simulator to show that the time to distribute a file in a Bittorrent swarm has a strong relation to the overlay topology.  
 Al-Hamra et al. \cite{al2007understanding}, also using discrete event simulator, showed that Bittorrent creates a robust overlay topology and the overlay topology formed is not random. 
 Al-Hamra \textit{et al}. \cite{al2007understanding} also show that peer exchange (PEX) generates a chain-like overlay with a large diameter. 
 Dale \textit{et al}. \cite{dale2008evolution}, in an experimental study on PlanetLab, show that in the initial stage of Bittorrent a peer will get a random peer list from the tracker. 
 They found that a network of peers that unchoked each other is scale-free and the node degree follows a power-law distribution with exponent approximately 2. 
-Dale \textit{et al}. \cite{dale2008evolution} also showed that the path length formed in Bittorrent swarms averages four hops.  
-However, little work has been done on determining that topology  in the real world. 
+Dale \textit{et al}. \cite{dale2008evolution} also showed that the path length formed in Bittorrent swarms averages four hops and Bittorrent swarms have low average clustering coefficient.  
+However, little work has been done on determining that topology in the real world. 
 Our results agree with previous research \cite{dale2008evolution} in some areas and disagree in others, perhaps for two reasons.
-First, power-law claims must be handled carefully. Many steps are required to confirm the power-law behavior, including alternative model checking, and we must be prepared for disappoinment since other models may give a better fit. 
+First, power-law claims must be handled carefully. 
+Many steps are required to confirm the power-law behavior, including alternative model checking, and we must be prepared for disappoinment since other models may give a better fit. 
 Second, our methodology relies on real work measurement combine with simulation for validation. 
-We are using real swarms from a real and operational Bittorrent tracker. This real world measurement will reflect different type of clients connected to our swarm and each client has a different behavior. 
-Each client might run on a different operating system, and of course clients are spread geographically. 
+We are using real swarms from a real and operational Bittorrent tracker. 
+This real world measurement will reflect different type of clients connected to our swarm and each client has a different behavior. 
+%Each client might run on a different operating system, and of course clients are spread geographically. 
 We also face difficult-to-characterize network realities such as NAT and firewalls. 
 Our ability to reproduce key aspects of the topology dynamics suggests that these factors have only limited impact on the topology, somewhat to our surprise. 
 
