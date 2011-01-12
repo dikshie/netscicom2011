@@ -590,7 +590,7 @@ This observation is consistent with \cite{wu2010understanding}.
 We crawled top 35 TV series torrent from thepiratebay which claimed as the biggest torrent tracker on the Internet.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
-Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library  (used by uTorrent, Deluge, and other Bittorrent clients).
+Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library.  %(used by uTorrent, Deluge, and other Bittorrent clients).
 We modified rasterbar's libtorrent client to become connection greedy, i.e., try to connect to every peer about whom it received information from the tracker and other peers,remove the connection limit, and log PEX messages received from other clients.
 PEX messages sent from old versions of Vuze Bittorrent client contain not only currently connected peers but also its historically connected peers. 
 We can distinguished Vuze Bittorrent client from log files.
