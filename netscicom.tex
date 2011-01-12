@@ -607,9 +607,6 @@ It implies that our data set independent to measurement location and limited num
 \label{fig:num_peers}
 \end{figure}
 
-
-
-
 %----------------- DATA ANALYSIS BACKGROUND --------------------
 \subsection{Data Analysis Background}
 Many realistic networks exhibit the scale-free property \cite{clauset2009power}, though we note that ``scale-free" is not a complete description of a network topology \cite{doyle2005robust}\cite{mahadevan2006systematic}. 
@@ -630,8 +627,7 @@ Pr[X\ge x] \propto cx^{-\alpha}.
 \label{eq:powerlaw}
 \end{equation}
 where $\alpha$ is commonly called the scaling parameter. 
-The scaling parameter usually lies
-in the range $1.8<\alpha<3.5$.
+The scaling parameter usually lies in the range $1.8<\alpha<3.5$.
 
 In discrete form, the above formula can be expressed as:
 \begin{equation}
@@ -647,7 +643,7 @@ p(x)=\frac{x^{- \alpha}}{\zeta(\alpha,x_{min})}.
 \end{equation} 
 where $\zeta$ is the Hurwitz zeta function. %defined as
 
-The most common way to fit empirical data to a power-law is to take the logarithm of equation \ref{eq:powerlaw} and draw a straight line on a logarithmic plot \cite{mitzenmacher2004brief}.  
+%The most common way to fit empirical data to a power-law is to take the logarithm of equation \ref{eq:powerlaw} and draw a straight line on a logarithmic plot \cite{mitzenmacher2004brief}.  
 We use maximum likelihood to estimate the scaling parameter $\alpha$ of power-law as described detail in \cite{clauset2009power}.  
 This approach is accurate to estimate the scaling parameter in the limit of large sample size.  
 We will not describe the calculations in detail; the interested reader is referred to Appendix B in \cite{clauset2009power} for calculations of both $\alpha$ and $x_{min}$.
