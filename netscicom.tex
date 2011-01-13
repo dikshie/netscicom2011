@@ -637,11 +637,11 @@ p(x) = Pr(X=x) = Cx^{- \alpha}.
 This distribution diverges on zero, therefore there must be a lower bound of $x$ called $x_{min} > 0$ that holds for the sample to be fitted by a power-law. 
 If we want to estimate a good power-law scaling parameter then we must also have a good $x_{min}$ estimation. 
 
-Normalizing (\ref{eq:powerlawdiscrete})  we get
-\begin{equation}
-p(x)=\frac{x^{- \alpha}}{\zeta(\alpha,x_{min})}.
-\end{equation} 
-where $\zeta$ is the Hurwitz zeta function. %defined as
+%Normalizing (\ref{eq:powerlawdiscrete})  we get
+%\begin{equation}
+%p(x)=\frac{x^{- \alpha}}{\zeta(\alpha,x_{min})}.
+%\end{equation} 
+%where $\zeta$ is the Hurwitz zeta function. %defined as
 
 %The most common way to fit empirical data to a power-law is to take the logarithm of equation \ref{eq:powerlaw} and draw a straight line on a logarithmic plot \cite{mitzenmacher2004brief}.  
 We use maximum likelihood to estimate the scaling parameter $\alpha$ of power-law as described detail in \cite{clauset2009power}.  
