@@ -549,6 +549,7 @@ Besides collecting data from real Bittorrent networks, we ran simulations simila
 In these simulations, we assumed that peer arrivals and departures (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
 Since we are only interested in the construction of the overlay topology, we argue that our simulations are enough to explain the overlay properties.
+
 Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
 %In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
 Instantaneous snapshots is taken at exact time point thus capturing only a few nodes and links.
@@ -703,7 +704,8 @@ We address these concerns next.
 
 \begin{figure}
 \centering
-\epsfig{file=netscicom-graphs/20-data/cdf-01-p.eps, height=2in, width=3.2in}
+%\epsfig{file=netscicom-graphs/20-data/cdf-01-p.eps, height=2in, width=3.2in}
+\epsfig{file=netscicom-graphs/20-data/cdf-at-p-01.eps, height=2in, width=3.2in}
 \caption{CDF at p-value=0.1 for every Bittorrent swarm. It is clearly show high variation of CDF value of p-value=1.} 
 \label{fig:cdf-p-01}
 \end{figure}
