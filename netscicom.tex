@@ -727,16 +727,18 @@ We address these concerns next.
 \subsection{Alternative Distributions}
 Even if we have estimated the power-law parameter properly and the fit is decent, we found many points in our data sets  do not fall to into power-law model.
 Now  we use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation and the fit is decent.
-The general likelihood ratio test statistic asymptotically has a standard Gaussian distribution when the competing models are equally good.
+%The general likelihood ratio test statistic asymptotically has a standard Gaussian distribution when the competing models are equally good.
 
 We now hypothesize that the the smaller family of power-law distributions may give a better fit to our data sets. 
 We only consider power-law model and power-law with exponential cut-off model as example to show model selection.
 Model selection for power-law model and power-law with exponential cut-off is a kind of nested model selection problem. 
 In a nested model selection,  there is always a possibility that a bigger family (power-law) can provide as good a fit as the smaller family (power-law with exponential cut-off). 
-To distinguish between such models, a modified likelihood ratio test is needed. 
-The nested case model asymptotically adopts chi-squared distribution.  
+%To distinguish between such models, a modified likelihood ratio test is needed. 
+%The nested case model asymptotically adopts chi-squared distribution.  
 Vuong \cite{vuong1989likelihood} provides the significance value ($\rho$ value) for likelihood ratio test. 
-In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
+Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the p-value here helps us establish which of three possibilities occurs: (i) $\rho$>0.1 means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho$<0.1 and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho$<0.1 and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
+
+%In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
 It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
 Some swarms have CDF at $\rho$ value $=0.1$ more than $80\%$.
