@@ -346,7 +346,8 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 %\linespread{0.95}
-\usepackage{epsfig,times}
+\usepackage{epsfig}
+\usepackage{mathptmx}
 %% INFOCOM 2010 addition:
 \makeatletter
 \def\ps@headings{%
@@ -522,7 +523,7 @@ After the metainfo file is read, the Bittorrent application will contact a track
 learns that peer A is connected to peer B and C. At t=2, the actor gets  PEX messages from peers C and A. The actor
 learns that now peer A is connected to peer D. Thus the actor knows the properties of peer A at t=1 and t=2.} 
 \label{fig:pexworks}
-%\vspace{-4mm}
+\vspace{-5mm}
 \end{figure}
 
 PEX is a mechanism introduced in Bittorrent to discover other peers in the swarm, in which two connected peers exchange messages containing a set of connected peers.  
@@ -604,6 +605,7 @@ It implies that our data set independent to measurement location and limited num
 \epsfig{file=netscicom-graphs/20-data/cdf-num.eps, height=2in, width=3.2in}
 \caption{CDF number of peers for every swarm during measurement. It is clearly show high variation number of peers in every swarm due to churn in Bittorrent network.} 
 \label{fig:num_peers}
+\vspace{-5mm}
 \end{figure}
 
 %----------------- DATA ANALYSIS BACKGROUND --------------------
@@ -680,7 +682,7 @@ In torrent1 the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we w
 While in the same graph we also show the optimum $x_{min}=1$ for torrent3 and the fit visually seems good.
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
 The $p$ value more than $0.1$ maximum is only around $70\%$ therefore It clearly shows that node degree in Bittorrent topology does not always follow power-law distribution.
-A magnified view CDF at p-value=$0.1$ is  shown in figure \ref{fig:cdf-p-01}.
+A magnified view CDF at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
 
 However these data sets must be interpreted with care. 
 The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size $n=50$ \cite{clauset2009power}. 
@@ -692,22 +694,25 @@ We address these concerns next.
 \epsfig{file=matlab/powerlaws_full_v0.0.9-2010-01-24/output.eps, width=3.2in}
 \caption{CDF node degree fit for snapshots of two torrents, with three fits shown in logarithm scale. Torrent1: for $x_{min}=1$ , $\alpha = 2.9$, and $p=0.01$. For $x_{min}=2$ , $\alpha = 2.11$, and $p = 0.01$. Torrent3: for $x_{min}=1$, $\alpha = 2.1$, and $p = 0.1$. }
 \label{fig:fitting}
+\vspace{-5mm}
 \end{figure}
 
 \begin{figure}
 \centering
 %\epsfig{file=netscicom-graphs/20-data/cdf-total-p.eps, height=2in, width=3.2in}
 \epsfig{file=netscicom-graphs/20-data/aggregate-p-cdf.eps, height=2in, width=3.2in}
-\caption{CDF p-value. It is show that more than 60\% of Bittorrent network does not fit to the power-law distribution.} 
+\caption{CDF p-value of KS statistics. It shows that around 45\% of Bittorrent network does not fit to the power-law distribution for all data set.} 
 \label{fig:cdf-p}
+\vspace{-5mm}
 \end{figure}
 
 \begin{figure}
 \centering
 %\epsfig{file=netscicom-graphs/20-data/cdf-01-p.eps, height=2in, width=3.2in}
 \epsfig{file=netscicom-graphs/20-data/cdf-at-p-01.eps, height=2in, width=3.2in}
-\caption{CDF at p-value=0.1 for every Bittorrent swarm. It is clearly show high variation of CDF value of p-value=1.} 
+\caption{CDF at p-value=0.1 for every Bittorrent swarm. The range of CDF value at p-value=0.1 for every swarm lies between 0.21 until 0.65.} 
 \label{fig:cdf-p-01}
+\vspace{-5mm}
 \end{figure}
 
 %\begin{figure}
@@ -717,26 +722,28 @@ We address these concerns next.
 %\label{fig:cdf-lr}
 %\end{figure}
 
-\begin{figure}
-\centering
-\epsfig{file=netscicom-graphs/20-data/cdf-01-lr.eps, height=2in, width=3.2in}
-\caption{CDF at $\rho$ value $=0.1$  for nested model comparison power-law and power-law with exponential cutoff.} 
-\label{fig:cdf-lr}
-\end{figure}
+%\begin{figure}
+%\centering
+%\epsfig{file=netscicom-graphs/20-data/cdf-01-lr.eps, height=2in, width=3.2in}
+%\caption{CDF at $\rho$ value $=0.1$  for nested model comparison power-law and power-law with exponential cutoff.} 
+%\label{fig:cdf-lr}
+%\end{figure}
 
 \subsection{Alternative Distributions}
-Even if we have estimated the power-law parameter properly and the fit is decent, we found many points in our data sets  do not fall to into power-law model.
-Now  we use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation and the fit is decent.
+Even if we have estimated the power-law parameter properly and the fit is decent, it does not mean power-law model is good.
+There are always possibilities that non power-law models better than power-law model.
+We use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation and the fit is decent.
 %The general likelihood ratio test statistic asymptotically has a standard Gaussian distribution when the competing models are equally good.
-
-We now hypothesize that the the smaller family of power-law distributions may give a better fit to our data sets. 
+%We now hypothesize that the the smaller family of power-law distributions may give a better fit to our data sets. 
 We only consider power-law model and power-law with exponential cut-off model as example to show model selection.
 Model selection for power-law model and power-law with exponential cut-off is a kind of nested model selection problem. 
 In a nested model selection,  there is always a possibility that a bigger family (power-law) can provide as good a fit as the smaller family (power-law with exponential cut-off). 
 %To distinguish between such models, a modified likelihood ratio test is needed. 
 %The nested case model asymptotically adopts chi-squared distribution.  
-Vuong \cite{vuong1989likelihood} provides the significance value ($\rho$ value) for likelihood ratio test. 
-Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho$>0.1 means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho$<0.1 and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho$<0.1 and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
+Vuong \cite{vuong1989likelihood} provides foundation os the significance value ($\rho$ value) for likelihood ratio test. 
+For concrete explanation and real-world examples, we refer the readers to \cite{clauset2009power}.
+
+Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho > 0.1$ means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho  < 0.1$ and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho < 0.1$ and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
 
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
