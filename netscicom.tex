@@ -453,8 +453,9 @@ dikshie@sfc.wide.ad.jp \quad\quad husni@ai3.net \quad\quad rdv@sfc.wide.ad.jp \q
 This paper describes an experimental study of the overlay topologies of Bittorrent networks, focusing on the activity of the nodes of its P2P topology and especially their dynamic relationships.  
 Peer Exchange Protocol (PEX) messages are analyzed to infer topologies and their properties, capturing the variations of their behavior. 
 This study employs sampling to accommodate the large scale and high fluctuations in Bittorrent systems.  
-Our results show that the node degree of Bittorrent networks follows the power-law model only for relatively short periods, as verified with the Kolmogorov-Smirnov (KS) goodness of fit test. 
-We also found that the average clustering coefficient is very low.  
+Our results show that the node degree of Bittorrent networks follows power-law with exponential cut-off, as verified with the Kolmogorov-Smirnov (KS) goodness of fit test and likelihood ratio test.
+We also found that the average clustering coefficient is very low. 
+This is indication that Bitorrent network may form  power-law with exponential cut-off random network.
 We confirm our results with simulation.  
 Our results agree in some particulars and disagree in others with isolated testbed experiments on Bittorrent, suggesting that more work is required to fully model the behavior of real-world Bittorrent networks.
 \end{abstract}
@@ -503,7 +504,7 @@ Our contribution: we design a rigorous and simple method for infering Bitorrent 
 We show its validity by simulations.
 To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
 
-Our findings in this work shed light into puzzling that the node degree of Bittorrent networks follows the power-law model only for relatively short periods of time and Bittorrent networks do not exhibit the small-world phenomenon. 
+Our findings in this work shed light into puzzling that  Bittorrent networks can be described by power-law with exponential cut-off random networks.
 This surprising result may contradict earlier findings and our simulations demonstrate this same phenomenon, suggesting that these results are not simply measurement artifacts.
 
 %------------BACKGROUND and RELATED WORK -------------------
@@ -729,6 +730,30 @@ We address these concerns next.
 %\label{fig:cdf-lr}
 %\end{figure}
 
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho.eps, height=2in, width=3.2in}
+\caption{Scatter of p-value vs $\rho$ value. $52\%$ points lie in area 1, $24\%$ points lie in area 2 and $24\%$ points lie in area 3.} 
+\label{fig:scatter-pvalue-vs-rho}
+\vspace{-5mm}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho-4region.eps, height=2in, width=3.2in}
+\caption{Scatter of p-value vs loglikelihood ratio (LR) for $\rho < 0.1$. There are no points lie in area 1 and area 3 instead $42\%$ points lie in area 3 and $58\%$ points lie in area 4.} 
+\label{fig:scatter-pvalue-vs-lr-for-rho-le-01}
+\vspace{-5mm}
+\end{figure}
+
+%\begin{figure}
+%\centering
+%\epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho01-lr-3d.eps, height=2in, width=3.2in}
+%\caption{3D Scatter of p-value vs loglikelihood ratio (LR) vs $\rho$ for $\rho < 0.1$.} 
+%\label{fig:scatter-pvalue-vs-lr-vs-rho-for-rho-le-01}
+%\vspace{-5mm}
+%\end{figure}
+
 \subsection{Alternative Distributions}
 Even if we have estimated the power-law parameter properly and the fit is decent, it does not mean power-law model is good.
 There are always possibilities that non power-law models better than power-law model.
@@ -745,14 +770,22 @@ For concrete explanation and real-world examples, we refer the readers to \cite{
 
 Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho > 0.1$ means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho  < 0.1$ and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho < 0.1$ and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
 
+Figure \ref{fig:scatter-pvalue-vs-rho} shows scatter plot our data: $p$ value vs $\rho$ value.
+$52\%$ points lie in range $\rho < 0.1$ and $p > 0$.
+We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives better fit rather than pure power-law model.
+Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$. 
+In this figure, we count that $58\%$ data lie in $LR=$negative and $p$ value $< 0.1$ and $42\%$ data lie in $LR=$negative and $p$ value $>0.1$.
+This figure gives us explanation that alternative model is better. 
+Althought in case $p$ value $<0.1$ which we reject power-law as model , the alternative model is still better than power-law model. 
+
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
-Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
-It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
-Some swarms have CDF at $\rho$ value $=0.1$ more than $80\%$.
-It means that for those swarms the power-law with exponential cut-off model can fit well.
+%Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
+%It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
+%Some swarms have CDF at $\rho$ value $=0.1$ more than $80\%$.
+%It means that for those swarms the power-law with exponential cut-off model can fit well.
 %Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
 %We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
-We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
+%We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
 This sparse observation clearly describe that comparing the model to other models is very complex task in highly dynamics networks.
 
 \subsection{Clustering Coefficient}\label{clusteringcoef}
@@ -770,8 +803,8 @@ C = \frac{1}{n} \sum_{v \in G} c_v.
 \end{equation}
 A larger clustering coefficient represents more clustering at nodes in the graph therefore clustering coefficient expresses the local robustness of the network.
 The disctinction between a random and a non-random graph can be measured by clustering-coefficient metrics \cite{watts1998collective}.
-Newman \cite{newman2003properties} mentions that virus outbreaks spread faster in highly clustered networks. 
 A network that has a high clustering coefficient and a small average path length is called a \textit{small-world} model \cite{watts1998collective}.
+Newman \cite{newman2003properties} mentions that virus outbreaks spread faster in highly clustered networks. 
 In Bittorrent systems, a previous study \cite{legout2007clustering} mentioned the possibility that Bittorrent's efficiently partly comes from the clustering of peers.
 Figure \ref{fig:cdf-clustering} shows the CDF clustering coefficient value of our data sets.
 The coefficient clustering values are very sparse. 
@@ -835,15 +868,15 @@ Our ability to reproduce key aspects of the topology dynamics suggests that thes
 We have investigated the properties of Bittorrent overlay topologies from the point of view of the peer exchange protocol using real swarms from a real and operational Bittorrent tracker on the Internet. 
 We obtain instantaneous snapshots of the active topology of the Bittorrent network over a month.
 We cope with the dynamics of the overlay by sampling peer properties. 
-Unlike \cite{dale2008evolution}, our findings of this work is that the node degree of the graph formed in Bittorrent swarm using PEX does not follow a power-law distribution independent of time and changes to the number of peers although we see same observation which is low clustering coefficient.
-Some areas of improvement that we have identified for future work are: correlation analysis number of peers with $\alpha$ and $p$ value, confirming our observations for larger file sizes, continued characterization and of NATed peers, wider model selection and comparing the results with simulation for global graph properties such as distance distribution and spectrum.
+Unlike \cite{dale2008evolution}, our findings of this work is that the node degree of the graph formed in Bittorrent swarm can be described by power law with exponential cut-off and low clustering observation implies Bittorrent networks is near to random networks.
+Some areas of improvement that we have identified for future work are: more correlation analysis number of peers with $\alpha$ and $p$ value, continued characterization with NATed peers, wider likelihood ratio test with other models and comparing the results with simulation for global graph properties such as distance distribution and spectrum.
 We hope to incorporate these properties into a complete $dK$ series for the evolution of a real-world Bittorrent overlay as it evolves over time \cite{mahadevan2006systematic}. 
 We conclude that further work throughout the community is necessary to continue to improve the agreement of simulation and controlled experiment with the real world, and that such work will impact our understanding of Bittorrent performance and its effects on the Internet.
 
 
 \section*{Acknowledgements}
 %This research was supported by The Ministry of Education, Culture, Sports, Science and Technology of Japan. 
-The Authors would like to thank to Daniel Stutzbach for help on graph sampling, Aaron Clauset for power-law Matlab code, Sue Moon and Joe Touch for suggestions.
+The Authors would like to thank to Daniel Stutzbach for help on graph sampling, Aaron Clauset for help on loglikelihood test and power-law Matlab code, Sue Moon and Joe Touch for suggestions.
 
 \bibliographystyle{IEEEtran}
 \bibliography{netscicom}
