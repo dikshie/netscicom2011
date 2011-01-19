@@ -617,7 +617,7 @@ In this paper, we test this hypothesis.
 
 In a scale-free network, the degree distribution follows a power-law distribution.   
 A power-law distribution is quite a natural model and can be generated from simple generative processes \cite{mitzenmacher2004brief}, and power-law models appear in many areas of science \cite{clauset2009power} \cite{mitzenmacher2004brief}. 
-For Bittorrent networks, we argue that `tit-for-tat' mechanism in Bittorrent will make a node prefer to attach to other nodes that provide higher download rate rather than higher degree node therefore we need to know the current state of node degree distribution in real Bittorrent systems.
+%For Bittorrent networks, we argue that `tit-for-tat' mechanism in Bittorrent will make a node prefer to attach to other nodes that provide higher %download rate rather than higher degree node therefore we need to know the current state of node degree distribution in real Bittorrent systems.
 %Data with power-law distributed requires special of estimation because of their specific features: slow than exponential decay to zero, violation %cramer condition, possible non-existent some moments, and sparse observation in tail \cite{markovich2007nonparametric}.
 %We argue that consecutive of instantaneous node degree properties through power-law analysis combine with consecutive of instantaneous %clustering coefficient can reveal the dynamics of Bitorrent overlay topologies. 
 %We will address clustering coefficient in next section. 
@@ -682,12 +682,14 @@ Figure \ref{fig:fitting} shows the fitting problem example for data set torrent1
 In torrent1 the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
 While in the same graph we also show the optimum $x_{min}=1$ for torrent3 and the fit visually seems good.
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
-The $p$ value more than $0.1$ maximum is only around $70\%$ therefore It clearly shows that node degree in Bittorrent topology does not always follow power-law distribution.
-A magnified view CDF at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
+This figure explain that from KS statistics point of view around $45\%$ Bitorrent networks do not follow power-law model.
+A magnified view CDF value at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
+This figure explain that every swarm has different number of $p$value $\ge 0.1$.
+Some Bittorrent swarms do not exhibit power-law model and some others show the plausibility of power-law model.
 
 However these data sets must be interpreted with care. 
 The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size $n=50$ \cite{clauset2009power}. 
-Also, for the goodness-of-fit test, a large $p$ value does not mean the power-law model is the correct distribution for data sets, because there may be other distributions that match the data sets and there is always a possibility that small value of $p$ the distribution will follow a power-law even though the power-law is not the right model\cite{clauset2009power}. 
+Also, for the goodness-of-fit test, a large $p$ value does not mean the power-law  is the correct distribution for data sets, because there may be other distributions that match the data sets and there is always a possibility that small value of $p$ the distribution will follow a power-law even though the power-law is not the right model\cite{clauset2009power}. 
 We address these concerns next.
 
 \begin{figure}
