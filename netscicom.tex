@@ -588,18 +588,18 @@ This observation is consistent with \cite{wu2010understanding}.
 
 %--------------- EXPERIMENT METHODOLOGY ----------------
 \subsection{Experiment Methodology}
-We crawled top 35 TV series torrent from thepiratebay which claimed as the biggest torrent tracker on the Internet.
+We crawled top 35 TV series torrent from the piratebay, which claims to be the biggest torrent tracker on the Internet.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
 Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library.  %(used by uTorrent, Deluge, and other Bittorrent clients).
-We modified rasterbar's libtorrent client to become connection greedy, i.e., try to connect to every peer about whom it received information from the tracker and other peers,remove the connection limit, and log PEX messages received from other clients.
+We modified rasterbar's libtorrent client to become connection greedy, i.e., try to connect to every peer about whom it received information from the tracker and other peers, remove the connection limit, and log PEX messages received from other clients.
 PEX messages sent from old versions of Vuze Bittorrent client contain not only currently connected peers but also its historically connected peers. 
-We can distinguished Vuze Bittorrent client from log files.
+We can distinguished Vuze Bittorrent clients from the log files.
 To cope with this situation, we do not include old Vuze client in data processing. 
 Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation \ref{eq:samplingvertices2}.
-We also study source code two popular Bittorrent clients which are uTorrent (using rasterbar libtorrent source code) and Vuze in term of peer connectivity to other client after getting random peer's IP address from tracker.
+We also study the source code two popular Bittorrent clients, uTorrent (using rasterbar libtorrent source code) and Vuze, in term of peer connectivity.
 Both clients by default try to connect to node candidates randomly without any preference thus we have random data sets.
-It implies that our data set independent to measurement location and limited number of measurement location.
+It implies that our data set is independent to measurement location and a limited number of measurement locations.
 
 \begin{figure}
 \centering
@@ -652,8 +652,8 @@ We will not describe the calculations in detail; the interested reader is referr
 
 %--------------- EXPERIMENT RESULT -------------------------
 \section{Experiment Results}\label{result}
-CDF number of peers for every swarm during measurement show in figure \ref{fig:num_peers}. 
-It is clearly that number of peers have high variability due churn in Bittorrent networks. 
+The CDF of the number of peers for every swarm during measurement show in figure \ref{fig:num_peers}. 
+It is clearly that the number of peers has high variability due to churn in Bittorrent networks. 
 %The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
 
 \subsection{Node Degree}
@@ -667,7 +667,7 @@ P_k = \sum_{k'=k}^{\infty} p_{k'}.
 The CDF plot has advantages over the node degree histogram because it does not suffer from binning problems  \cite{newman2003structure}.
 
 We do not know a priori if our data are power-law distributed. 
-Simply calculating the estimated scaling parameter does not give indication of  whether the power-law is a good model.  
+Simply calculating the estimated scaling parameter gives no indication of  whether the power-law is a good model.  
 To test the applicability of a power-law distribution, we use the goodness-of-fit test as described by Clauset \textit{et al}. \cite{clauset2009power}. 
 First, we fit data to the power-law model and calculate the Kolmogorov-Smirnov (KS) statistic for this fit. 
 Second, we generate power-law synthetic data sets based on the scaling parameter $\alpha$ estimation and the lower bound of $x_{min}$. 
@@ -675,17 +675,18 @@ We fit the synthetic data to a power-law model and calculate the KS statistics, 
 This fraction is called the $p$ value.  
 If $p \geq 0.1$ then a power-law model is a good model for the data set and if $p < 0.1$ then power-law is not a good model \cite{clauset2009power}.
 
-We mention before, a good estimation for $x_{min}$ is important to get overall good fitting.
-Too small $x_{min}$ will cause we only fit to the body of distribution.
-Too high $x_{min}$ will cause we only fit to the tail of distribution.
+As mentioned before, a good estimation for $x_{min}$ is important to get a overall good fit.
+Too small an $x_{min}$ will cause a fit only to the body of the distribution.
+Too high an $x_{min}$ will cause a fit only to the tail of the distribution.
 Figure \ref{fig:fitting} shows the fitting problem example for data set torrent1 and torrent3.
 In torrent1 the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
 While in the same graph we also show the optimum $x_{min}=1$ for torrent3 and the fit visually seems good.
+
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
-This figure explain that from KS statistics point of view around $45\%$ Bitorrent networks do not follow power-law model.
-A magnified view CDF value at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
-This figure explain that every swarm has different number of $p$ value $\ge 0.1$.
-Some Bittorrent swarms do not exhibit power-law model and some others show the plausibility of power-law model.
+This figure explain that from KS statistics point of view around $45\%$ of Bitorrent networks do not follow a power-law model.
+%A magnified view CDF value at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
+%This figure explain that every swarm has different number of $p$ value $\ge 0.1$.
+%Some Bittorrent swarms do not exhibit power-law model and some others show the plausibility of power-law model.
 
 However these data sets must be interpreted with care. 
 The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size $n=50$ \cite{clauset2009power}. 
@@ -709,14 +710,14 @@ We address these concerns next.
 \vspace{-5mm}
 \end{figure}
 
-\begin{figure}
-\centering
+%\begin{figure}
+%\centering
 %\epsfig{file=netscicom-graphs/20-data/cdf-01-p.eps, height=2in, width=3.2in}
-\epsfig{file=netscicom-graphs/20-data/cdf-at-p-01.eps, height=2in, width=3.2in}
-\caption{CDF at p-value=0.1 for every Bittorrent swarm. The range of CDF value at p-value=0.1 for every swarm lies between 0.21 until 0.65.} 
-\label{fig:cdf-p-01}
-\vspace{-5mm}
-\end{figure}
+%\epsfig{file=netscicom-graphs/20-data/cdf-at-p-01.eps, height=2in, width=3.2in}
+%\caption{CDF at p-value=0.1 for every Bittorrent swarm. The range of CDF value at p-value=0.1 for every swarm lies between 0.21 until 0.65.} 
+%\label{fig:cdf-p-01}
+%\vspace{-5mm}
+%\end{figure}
 
 %\begin{figure}
 %\centering
