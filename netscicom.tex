@@ -474,9 +474,9 @@ Our results agree in some particulars and disagree in others with isolated testb
 %-------INTRODUCTION----------------------
 \section{Introduction}\label{introduction}
 Among P2P applications, Bittorrent is the most popular. 
-In 2008, P2P transfer dominated Internet traffic %\cite{ipoque}.  
-Bittorrent is the most popular P2P protocol, although recent studies suggest P2P traffic proportion to global traffic is declining \cite{labovitz2010internet}.
-Cisco visual networking index also shows the declining of proportion P2P traffic to global traffic although P2P traffic itself slowly growing in absolute terms\cite{index2010forecast} .
+In 2008, P2P transfer dominated Internet traffic and Bittorrent is the most popular P2P protocol.
+Recent studies suggest P2P traffic proportion to global traffic is declining \cite{labovitz2010internet}.
+Although P2P traffic itself slowly growing in absolute terms, The Cisco visual networking index also shows the declining of proportion P2P traffic to global traffic \cite{index2010forecast}.
 This popularity reflects the robustness and efficiency of the Bittorrent protocol. 
 These characteristics of Bittorrent come from its peer and piece selection strategies to distribute large files efficiently. 
 %Bittorrent has now become the de-facto standard to distribute large files. 
@@ -491,7 +491,7 @@ These characteristics of Bittorrent come from its peer and piece selection strat
 %The mapping between a P2P overlay network topology and an ISP underlay network topology can benefit from the understanding of topological %measures such as clustering coefficient, node degree, etc.
 %Combining topology navigation with specific cost and performance metrics, the ISP's underlay networks and P2P overlay networks can perform more %appropriate traffic control and optimization.
 %Therefore understanding overlay construction network properties is important.
-Many properties of Bittorrent, such as upload/download performance and peer arrival and departure processes, have been studied \cite{guo2005measurements}, but only a few projects have assessed the topologies properties of Bittorrent.
+Many properties of Bittorrent, such as upload/download performance and peer arrival and departure processes, have been studied \cite{guo2005measurements}, but only a few projects have assessed the topological properties of Bittorrent.
 The Bittorrent system is different from other P2P systems.
 The Bittorrent protocol does not offer peer discovery and the Bittorrent tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
 While a crawler can be used in other P2P networks, such as Gnutella, in Bittorrent we cannot easily use a crawler to discover topology, making direct measurement of the topology difficult.
@@ -500,7 +500,7 @@ In this paper we describe our ``in-vivo" experiment study of the impact and topo
 %Studying topological properties of Bittorrent peers may lead us to find a way how to improve Bittorrent systems itself e.g., robustness. 
 While some Bittorrent experiments have built small Bittorrent networks on testbeds such as PlanetLab and OneLab, our experiments collect data from the real world. 
 We used Bittorrent's Peer Exchange (PEX) messages to infer the overlay topology of swarms that are listed on a Bittorrent tracker claiming to be the largest Bittorrent tracker on the Internet \cite{piratebay}\cite{zhang2010unraveling}.
-Our contribution: we design a rigorous and simple method for infering Bitorrent network. 
+Our contribution: is the design of a rigorous and simple method for infering Bitorrent network. 
 We show its validity by simulations.
 To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
 
