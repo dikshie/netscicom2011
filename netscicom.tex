@@ -758,28 +758,28 @@ We address these concerns next.
 %\end{figure}
 
 \subsection{Alternative Distributions}
-Even if we have estimated the power-law parameter properly and the fit is decent, it does not mean power-law model is good.
-There are always possibilities that non power-law models better than power-law model.
-We use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation and the fit is decent.
+Even if we have estimated the power-law parameter properly and the fit is decent, it does not mean the power-law model is good.
+There are always possibilities that non power-law models are better than the power-law model.
+We use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation.
 %The general likelihood ratio test statistic asymptotically has a standard Gaussian distribution when the competing models are equally good.
 %We now hypothesize that the the smaller family of power-law distributions may give a better fit to our data sets. 
-We only consider power-law model and power-law with exponential cut-off model as example to show model selection.
+We only consider a power-law model and a power-law with exponential cut-off model as examples to show model selection.
 Model selection for power-law model and power-law with exponential cut-off is a kind of nested model selection problem. 
-In a nested model selection,  there is always a possibility that a bigger family (power-law) can provide as good a fit as the smaller family (power-law with exponential cut-off). 
+In a nested model selection,  there is always the possibility that a bigger family (power-law) can provide as good a fit as the smaller family (power-law with exponential cut-off). 
 %To distinguish between such models, a modified likelihood ratio test is needed. 
 %The nested case model asymptotically adopts chi-squared distribution.  
-Vuong \cite{vuong1989likelihood} provides foundation os the significance value ($\rho$ value) for likelihood ratio test. 
+Vuong \cite{vuong1989likelihood} provides foundation of the significance value ($\rho$ value) for likelihood ratio test. 
 For concrete explanation and real-world examples, we refer the readers to \cite{clauset2009power}.
 
 Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho > 0.1$ means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho  < 0.1$ and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho < 0.1$ and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
 
-Figure \ref{fig:scatter-pvalue-vs-rho} shows scatter plot our data: $p$ value vs $\rho$ value.
+Figure \ref{fig:scatter-pvalue-vs-rho} shows a scatter plot our data: $p$ value vs $\rho$ value.
 $52\%$ points lie in range $\rho < 0.1$ and $p > 0$.
-We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives better fit rather than pure power-law model.
+We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
 Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$. 
-In this figure, we count that $58\%$ data lie in $LR=$negative and $p$ value $< 0.1$ and $42\%$ data lie in $LR=$negative and $p$ value $>0.1$.
-This figure gives us explanation that alternative model is better. 
-Althought in case $p$ value $<0.1$ which we reject power-law as model , the alternative model is still better than power-law model. 
+In this figure, we see that $58\%$ data lie in $LR=$negative and $p$ value $< 0.1$ and $42\%$ data lie in $LR=$negative and $p$ value $>0.1$.
+This figure gives us an explanation that the alternative model is better. 
+Althought in the case $p$ value $<0.1$ we reject power-law as the model, the alternative model is still better than the power-law model. 
 
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 %Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
@@ -789,7 +789,7 @@ Althought in case $p$ value $<0.1$ which we reject power-law as model , the alte
 %Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
 %We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
 %We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
-This observation clearly describe that comparing the model to other models is very complex task in highly dynamics networks.
+This observation clearly demonstrate that comparing the model to other models is a very complex task in highly dynamic networks.
 
 \subsection{Clustering Coefficient}\label{clusteringcoef}
 
