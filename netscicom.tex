@@ -504,7 +504,7 @@ Our contribution: is the design of a rigorous and simple method for infering Bit
 We show its validity by simulations.
 To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
 
-Our findings in this work shed light into puzzling that  Bittorrent networks can be described by power-law with exponential cut-off random networks.
+Our findings in this work shed light into puzzling, not yet explained, that  Bittorrent networks can be described by power-law with exponential cut-off random networks.
 This surprising result may contradict earlier findings and our simulations demonstrate this same phenomenon, suggesting that these results are not simply measurement artifacts.
 
 %------------BACKGROUND and RELATED WORK -------------------
@@ -545,19 +545,19 @@ This implementation difference may affect the ultimate behavior of the network.
 %The other ways to infer topologies are simulation or deploying Bittorrent nodes in a real network or in a laboratory, e.g. PlanetLab. Deploying %hundreds to thousands of nodes in a real network or in the laboratory in a manner that accurately reflects the real world is a very challenging task.
 
 %Here we present a simple way to get peer information from a  Bittorrent swarm. 
-We use PEX to collect peer neighbors information  (see figure.\ref{fig:pexworks} and then we describe the network formed in terms of properties such as node degree and average clustering. 
-Besides collecting data from real Bittorrent networks, we ran simulations similar to Al-Hamra \textit{et al}. \cite{al2009swarming}. 
+We use PEX to collect peer neighbors information  (see figure \ref{fig:pexworks}) and then we describe the network formed in terms of properties such as node degree and average clustering. 
+Besides collecting data from real Bittorrent networks, we ran simulations similar to these of Al-Hamra \textit{et al}. \cite{al2009swarming}. 
 In these simulations, we assumed that peer arrivals and departures (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
 Since we are only interested in the construction of the overlay topology, we argue that our simulations are enough to explain the overlay properties.
 
-Temporal graphs have recently proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
+Temporal graphs have recently been proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
 %In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
-Instantaneous snapshots is taken at exact time point thus capturing only a few nodes and links.
-In this paper, we study network dynamics by continously taking network snapshots with the duration $\tau$ as time evolves and show them as time series.
+An instantaneous snapshot is taken at an exact time point thus capturing only a few nodes and links.
+In this paper, we study the network dynamics by continously taking network snapshots with the duration $\tau$ as time evolves, and show them as a time series.
 A snapshot captures all participating peers and their connections within a particular time interval, from which a graph can be generated.
 The snapshot duration may have minor effects on analyzing slowly changing networks.
-However, in a P2P networks, the characteristics of the network topology vary greatly with respect to the time scale of the snapshot duration as mentioned in \cite{stutzbach2008characterizing}.
+However, in a P2P network, the characteristics of the network topology vary greatly with respect to the time scale of the snapshot duration to be the mentioned in \cite{stutzbach2008characterizing}.
 We consider $\tau=3 $ minutes as minimum session length in the Bittorrent \cite{stutzbach2006understanding}. 
 
 \subsection{Graph Sampling}
