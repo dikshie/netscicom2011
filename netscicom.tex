@@ -772,12 +772,24 @@ For concrete explanation and real-world examples, we refer the readers to \cite{
 Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho > 0.1$ means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho  < 0.1$ and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho < 0.1$ and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
 
 Figure \ref{fig:scatter-pvalue-vs-rho} shows a scatter plot our data: $p$ value vs $\rho$ value.
+We divide the figure into three areas: area 1, area 2, and area 4 with green line as a border. 
+Area 1: $\rho$ value $<0.1$ and $p$ value $>0$. 
+Area 2: $\rho$ value $>0.1$ and $p$ value $<0.1$
+Area 3: $\rho$ value $>0.1$ and  $p$ value $>0.1$ 
+This division will make us easier to see how sparse the points are in each area and to see how many points fall into $\rho$ value $<0.1$.
+As mentioned before $\rho$ value $<0.1$ is an indication of alternative model may be plausible for data sets.
+In this figure we do not include loglikelihood signs. 
 $52\%$ points lie in range $\rho < 0.1$ and $p > 0$.
-We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
-Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$. 
-In this figure, we see that $58\%$ data lie in $LR=$negative and $p$ value $< 0.1$ and $42\%$ data lie in $LR=$negative and $p$ value $>0.1$.
-This figure gives us an explanation that the alternative model is better. 
-Althought in the case $p$ value $<0.1$ we reject power-law as the model, the alternative model is still better than the power-law model. 
+%We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
+Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$.
+We divide the figure into four areas: area 1, area 2, area 3, and area 4  with green lines as borders.
+Area 1: LR=positive sign and $p$ value $<0.1$.
+Area 2: LR=positive sign and $p$ value $>0.1$.
+Area 3: LR=negative sign and $p$ value $<0.1$.
+Area 4: LR=negative sign and $p$ value $>0.1$. 
+In this figure, we see that no points lie in area 1 and area 2 (LR=possitive sign) instead in detail  $58\%$ data lie in area 3 and $42\%$ data lie in area 4.
+This figure gives us an explanation that the alternative model is better.  
+Althought in the case $p$ value $<0.1$ we reject power-law as the plausible model, the alternative model is still better than the power-law model. 
 
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 %Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
@@ -822,7 +834,6 @@ Considering only the low clustering coefficient, the Bittorrent topologies seem 
 
 
 \section{Confirmation via Simulation}\label{simulation}
-
 Here we use simulations to compare the overlay topology properties based  on our real-world experiments. 
 We set the maximum peer set size to 80, the minimum number of neighbors to 20, and the maximum number of outgoing connection to 80. In our simulation, the result is quite easy to get since we are on a controlled system;  we can directly read the  global topology properties from our results. 
 We also have the simulated PEX messages. We compare the global overlay topology properties as the final result from the simulator with the overlay topology that we get from PEX on the same simulator.
