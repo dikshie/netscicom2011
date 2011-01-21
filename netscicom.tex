@@ -627,9 +627,8 @@ A power-law distribution can be described as
 Pr[X\ge x] \propto cx^{-\alpha}.
 \label{eq:powerlaw}
 \end{equation}
-where $\alpha$ is commonly called the scaling parameter. 
+where $x$ is the quantity of distribution and $\alpha$ is commonly called the scaling parameter. 
 The scaling parameter usually lies in the range $1.8<\alpha<3.5$.
-
 In discrete form, the above formula can be expressed as:
 \begin{equation}
 p(x) = Pr(X=x) = Cx^{- \alpha}.
@@ -646,8 +645,8 @@ If we want to estimate a good power-law scaling parameter then we must also have
 
 %The most common way to fit empirical data to a power-law is to take the logarithm of equation \ref{eq:powerlaw} and draw a straight line on a logarithmic plot \cite{mitzenmacher2004brief}.  
 We use maximum likelihood to estimate the scaling parameter $\alpha$ of power-law as described detail in \cite{clauset2009power}.  
-This approach is accurate to estimate the scaling parameter in the limit of large sample size.  
-We will not describe the calculations in detail; the interested reader is referred to Appendix B in \cite{clauset2009power} for calculations of both $\alpha$ and $x_{min}$.
+This approach is accurate to estimate the scaling parameter in the limit of large sample size. 
+For the detailed calculations of both $x_{min}$ and $alpha$, see Appendix B in \cite{clauset2009power}.
 
 %--------------- EXPERIMENT RESULT -------------------------
 \section{Experiment Results}\label{result}
