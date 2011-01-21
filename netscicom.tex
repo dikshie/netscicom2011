@@ -517,7 +517,6 @@ Bittorrent is a P2P application designed to distribute large files with a focus 
 %If a peer wants to join a Bittorrent swarm, it must download the metainfo file from a well-known Bittorrent tracker, usually via HTTP. 
 %After the metainfo file is read, the Bittorrent application will 
 When joining a swarm, a Bittorrent application contacts a tracker, which responds with an initial peer set of randomly selected peers, possibly including seed and leecher IP addresses and port numbers.  
-
 \begin{figure}
 \centering
 \epsfig{file=graphs/pex_2.eps, height=2in, width=3.2in}
@@ -527,7 +526,6 @@ learns that now peer A is connected to peer D. Thus the actor knows the properti
 \label{fig:pexworks}
 \vspace{-5mm}
 \end{figure}
-
 PEX is a mechanism introduced in Bittorrent to discover other peers in the swarm, in which two connected peers exchange messages containing a set of connected peers.  
 With PEX, peers only need to use the tracker as an initial source of peers.   
 Based on a survey by the authors of several Bittorent client web sites, it appears that most clients began to introduce PEX in 2007 \cite{client}.
@@ -546,7 +544,7 @@ This implementation difference may affect the ultimate behavior of the network.
 %The other ways to infer topologies are simulation or deploying Bittorrent nodes in a real network or in a laboratory, e.g. PlanetLab. Deploying %hundreds to thousands of nodes in a real network or in the laboratory in a manner that accurately reflects the real world is a very challenging task.
 
 %Here we present a simple way to get peer information from a  Bittorrent swarm. 
-We use PEX to collect peer neighbors information  (see figure \ref{fig:pexworks}) and then we describe the network formed in terms of properties such as node degree and average clustering. 
+We used PEX to collect peer neighbors information  (see figure \ref{fig:pexworks}) and then we describe the network formed in terms of properties such as node degree and average clustering. 
 Besides collecting data from real Bittorrent networks, we ran simulations similar to these of Al-Hamra \textit{et al}. \cite{al2009swarming}. 
 In these simulations, we assumed that peer arrivals and departures (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
