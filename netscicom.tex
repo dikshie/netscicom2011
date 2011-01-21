@@ -534,7 +534,7 @@ Based on a survey by the authors of several Bittorent client web sites, it appea
 %The PEX message contains the set of peers that are currently connected.
 
 However,  there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
-Therefore there are differences, such as for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
+Therefore there are differences, e.g. for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
 In other Bittorrent clients, the number of IP address and port pairs is decided based on the size of the PEX message.  
 This implementation difference may affect the ultimate behavior of the network.
 
@@ -549,7 +549,7 @@ We used PEX to collect peer neighbors information  (see Figure \ref{fig:pexworks
 Besides collecting data from real Bittorrent networks, we ran simulations similar to these of Al-Hamra \textit{et al}. \cite{al2009swarming}. 
 In these simulations, we assumed that peer arrivals and departures (churns) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
-Since we are only interested in the construction of the overlay topology, we argue that our simulations are enough to explain the overlay properties.
+Since we are only interested in the construction of the overlay topology, we argue that our simulations are thorough enough to explain the overlay properties.
 
 Temporal graphs have recently been proposed to study real dynamic graphs, with the intuition that the behaviour of dynamic networks can be more accurately captured by a sequence of snapshots of the network topology as it changes over time.
 %In highly dynamics network such as P2P, we are not interested to take instantaneous snapshots. 
@@ -558,7 +558,7 @@ In this paper, we study the network dynamics by continously taking network snaps
 A snapshot captures all participating peers and their connections within a particular time interval, from which a graph can be generated.
 The snapshot duration may have minor effects on analyzing slowly changing networks.
 However, in a P2P network, the characteristics of the network topology vary greatly with respect to the time scale of the snapshot duration to be the mentioned in \cite{stutzbach2008characterizing}.
-We consider $\tau=3 $ minutes as minimum session length in the Bittorrent \cite{stutzbach2006understanding}. 
+We consider $\tau=3 $ minutes to be a reasonable estimate of minimum session length in the Bittorrent \cite{stutzbach2006understanding}. 
 
 \subsection{Graph Sampling}
 %Due to the large and dynamic nature of Bittorrent networks, it is often very difficult or impossible to capture global properties. 
@@ -573,7 +573,7 @@ V_{t0,t_0+\Delta} = \bigcup_{t=t_0}^{t_0+\Delta} V_t.
  \label{eq:samplingvertices}
  \end{equation}
 
-Stutzbach \textit{et al}. \cite{stutzbach2007sampling} showed that  Equation (\ref{eq:samplingvertices}) is only appropriate for exponentialy distributed  peer session lengths and as we know from existing measurements Bittorrent networks peer session lengths have very high variation \cite{guo2005measurements}.  
+Stutzbach \textit{et al}. \cite{stutzbach2007sampling} showed that  Equation (\ref{eq:samplingvertices}) is only appropriate for exponentially distributed  peer session lengths and as we know from existing measurements Bittorrent networks peer session lengths have very high variation \cite{guo2005measurements}.  
 Equation \ref{eq:samplingvertices} focuses on sampling peers instead of peer properties. 
 To cope with that problem we must be able to sample from the same peer more than once at different points in time \cite{stutzbach2007sampling}. 
 We may rewrite our desired sample as
@@ -597,7 +597,7 @@ PEX messages sent from old versions of Vuze Bittorrent client contain not only c
 We can distinguished Vuze Bittorrent clients from the log files.
 To cope with this situation, we do not include old Vuze client in data processing. 
 Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation \ref{eq:samplingvertices2}.
-We also study the source code two popular Bittorrent clients, uTorrent (using rasterbar libtorrent source code) and Vuze, in term of peer connectivity.
+We also study the source code of two popular Bittorrent clients, uTorrent (using rasterbar libtorrent source code) and Vuze, in term of peer connectivity.
 Both clients by default try to connect to node candidates randomly without any preference thus we have random data sets.
 It implies that our data set is independent to measurement location and a limited number of measurement locations.
 
