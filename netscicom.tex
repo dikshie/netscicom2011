@@ -703,7 +703,7 @@ We address these concerns next.
 \centering
 %\epsfig{file=netscicom-graphs/20-data/cdf-total-p.eps, height=2in, width=3.2in}
 \epsfig{file=netscicom-graphs/20-data/aggregate-p-cdf.eps, height=2in, width=3.2in}
-\caption{CDF p-value of KS statistics. It shows that across our entire set of Bittorrent snapshots, around $45\%$ of the time a power-law distribution is not a good fit for the data.} 
+\caption{CDF p value of KS statistics. It shows that across our entire set of Bittorrent snapshots, around $45\%$ of the time a power-law distribution is not a good fit for the data. Inset figure shows CDF p value for each torrent. The dash line on p value = 0.1 is the threshold.} 
 \label{fig:cdf-p}
 \vspace{-2mm}
 \end{figure}
@@ -779,8 +779,9 @@ Area 3: $\rho$ value $>0.1$ and  $p$ value $>0.1$
 This division will make us easier to see how sparse the points are in each area and to see how many points fall into $\rho$ value $<0.1$.
 As mentioned before $\rho$ value $<0.1$ is an indication of alternative model may be plausible for data sets.
 In this figure we do not include loglikelihood signs. 
-$52\%$ points lie in range $\rho < 0.1$ and $p > 0$.
+$52\%$ points lie in area 1.
 %We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
+
 Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$.
 We divide the figure into four areas: area 1, area 2, area 3, and area 4  with green lines as borders.
 Area 1: LR=positive sign and $p$ value $<0.1$.
