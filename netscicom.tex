@@ -457,7 +457,7 @@ Our results show that the node degree of Bittorrent networks follows a power-law
 We also found that the average clustering coefficient is very low. 
 This is an indication that a Bitorrent network may form a power-law with exponential cut-off random network.
 We confirm our results with simulation.  
-Our results agree in some particulars and disagree in others with isolated testbed experiments on Bittorrent, suggesting that more work is required to fully model the behavior of real-world Bittorrent networks.
+%Our results agree in some particulars and disagree in others with isolated testbed experiments on Bittorrent, suggesting that more work is required to %fully model the behavior of real-world Bittorrent networks.
 \end{abstract}
 
 
@@ -475,8 +475,9 @@ Our results agree in some particulars and disagree in others with isolated testb
 \section{Introduction}\label{introduction}
 Among P2P applications, Bittorrent is the most popular. 
 In 2008, P2P transfer dominated Internet traffic and Bittorrent is the most popular P2P protocol.
-Recent studies suggest P2P traffic proportion to global traffic is declining \cite{labovitz2010internet}.
-Although P2P traffic itself slowly growing in absolute terms, The Cisco visual networking index also shows the declining of proportion P2P traffic to global traffic \cite{index2010forecast}.
+P2P traffic is still growing, though recent studies suggest that its growth is slower than that of Internet traffic as a whole  \cite{labovitz2010internet} \cite{index2010forecast}. 
+%Recent studies suggest P2P traffic proportion to global traffic is declining \cite{labovitz2010internet}.
+%Although P2P traffic itself slowly growing in absolute terms, The Cisco visual networking index also shows the declining of proportion P2P traffic to global traffic \cite{index2010forecast}.
 %This popularity reflects the robustness and efficiency of the Bittorrent protocol. 
 %These characteristics of Bittorrent come from its peer and piece selection strategies to distribute large files efficiently. 
 %Bittorrent has now become the de-facto standard to distribute large files. 
@@ -524,7 +525,7 @@ When joining a swarm, a Bittorrent application contacts a tracker, which respond
 learns that peer A is connected to peer B and C. At t=2, the actor gets  PEX messages from peers C and A. The actor
 learns that now peer A is connected to peer D. Thus the actor knows the properties of peer A at t=1 and t=2.} 
 \label{fig:pexworks}
-\vspace{-5mm}
+\vspace{-2mm}
 \end{figure}
 PEX is a mechanism introduced in Bittorrent to discover other peers in the swarm, in which two connected peers exchange messages containing a set of connected peers.  
 With PEX, peers only need to use the tracker as an initial source of peers.   
@@ -605,7 +606,7 @@ It implies that our data set is independent to measurement location and a limite
 \epsfig{file=netscicom-graphs/20-data/cdf-num.eps, height=2in, width=3.2in}
 \caption{CDF number of peers for every swarm during measurement. It is clearly show high variation number of peers in every swarm due to churn in Bittorrent network.} 
 \label{fig:num_peers}
-\vspace{-5mm}
+\vspace{-2mm}
 \end{figure}
 
 %----------------- DATA ANALYSIS BACKGROUND --------------------
@@ -677,7 +678,7 @@ As mentioned before, a good estimation for $x_{min}$ is important to get a overa
 Too small an $x_{min}$ will cause a fit only to the body of the distribution.
 Too high an $x_{min}$ will cause a fit only to the tail of the distribution.
 Figure \ref{fig:fitting} shows the fitting problem example for data set \emph{torrent1} and \emph{torrent3}.
-In \{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
+In \emph{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
 While in the same graph we also show the optimum $x_{min}=1$ for \emph{torrent3} and the fit visually seems good.
 
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
@@ -696,7 +697,7 @@ We address these concerns next.
 \epsfig{file=matlab/powerlaws_full_v0.0.9-2010-01-24/output.eps, width=3.2in}
 \caption{Node degree fit for snapshots of two torrents, with three fits shown in logarithm scale. Torrent1: for $x_{min}=1$ , $\alpha = 2.9$, and $p=0.01$. For $x_{min}=2$ , $\alpha = 2.11$, and $p = 0.01$. Torrent3: for $x_{min}=1$, $\alpha = 2.1$, and $p = 0.1$. }
 \label{fig:fitting}
-\vspace{-5mm}
+\vspace{-2mm}
 \end{figure}
 
 \begin{figure}
@@ -705,7 +706,7 @@ We address these concerns next.
 \epsfig{file=netscicom-graphs/20-data/aggregate-p-cdf.eps, height=2in, width=3.2in}
 \caption{CDF p-value of KS statistics. It shows that accros our entire set of Bittorrent snapshots, around $45\%$ of the time a power-law distribution is not a good fit for the data.} 
 \label{fig:cdf-p}
-\vspace{-5mm}
+\vspace{-2mm}
 \end{figure}
 
 %\begin{figure}
@@ -736,7 +737,7 @@ We address these concerns next.
 \epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho.eps, height=2in, width=3.2in}
 \caption{Scatter of p-value vs $\rho$ value. In this figure we define area 1: $rho$ value $<0.1$ and $p$ value $>0$, area 2: $rho$ value $>0.1$ and $p$ value $<0.1$, area 3: $rho$ and $p$ value $>0.1$. $52\%$ of the points lie in area 1, $24\%$ of the points lie in area 2 and $24\%$ of the points lie in area 3.} 
 \label{fig:scatter-pvalue-vs-rho}
-\vspace{-5mm}
+\vspace{-2mm}
 \end{figure}
 
 \begin{figure}
@@ -744,7 +745,7 @@ We address these concerns next.
 \epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho-4region.eps, height=2in, width=3.2in}
 \caption{Scatter of p-value vs loglikelihood ratio (LR) for $\rho < 0.1$. In this figure we define area 1: LR=positive and $p$ value $<0.1$, area 2: LR=positive and $p$ value $>0.1$, area 3: LR=negative and $p$ value $<0.1$, area 4: LR=negative and $p$ value $>0.1$. There are no points in area 1 and area 3; instead $42\%$ of the points lie in area 3 and $58\%$ of the points lie in area 4.} 
 \label{fig:scatter-pvalue-vs-lr-for-rho-le-01}
-\vspace{-5mm}
+\vspace{-2mm}
 \end{figure}
 
 %\begin{figure}
@@ -817,6 +818,7 @@ Considering only the low clustering coefficient, the Bittorrent topologies seem 
 \epsfig{file=netscicom-graphs/20-data/cdf-clustering.eps, height=2in, width=3.2in}
 \caption{CDF of the clustering coefficient. It is clearly show that Bittorrent networks have low clustering coefficient.} 
 \label{fig:cdf-clustering}
+\vspace{-2mm}
 \end{figure}
 
 
