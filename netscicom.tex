@@ -514,8 +514,9 @@ Bittorrent is a P2P application designed to distribute large files with a focus 
 %Before distributing a file, a \textit{metainfo} file must be created.  
 %This metainfo file, also called a \textit{torrent file}, contains the size of the file, the number of pieces into which the file is divided, SHA-1 hashes for %every piece to verify the integrity of received pieces, and the IP addresses and port numbers of trackers.  
 %The \textit{tracker} is a central server keeping a list of all peers participating in the \textit{swarm}, which is the set of peers that are participating in %distributing the same file.  
-If a peer wants to join a Bittorrent swarm, it must download the metainfo file from a well-known Bittorrent tracker, usually via HTTP. 
-After the metainfo file is read, the Bittorrent application will contact a tracker, which responds with an initial peer set of randomly selected peers, possibly including seed and leecher IP addresses and port numbers.  
+%If a peer wants to join a Bittorrent swarm, it must download the metainfo file from a well-known Bittorrent tracker, usually via HTTP. 
+%After the metainfo file is read, the Bittorrent application will 
+When joining a swarm, a Bittorrent application contacts a tracker, which responds with an initial peer set of randomly selected peers, possibly including seed and leecher IP addresses and port numbers.  
 
 \begin{figure}
 \centering
