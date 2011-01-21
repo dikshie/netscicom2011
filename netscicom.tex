@@ -655,17 +655,17 @@ It is clearly that the number of peers has high variability due to churn in Bitt
 %The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
 
 \subsection{Power-law Distribution for Node Degree}
-The degree of a node in a network is the number of edges connected to that node. 
-If we define $p_k$ as the  fraction of nodes in the network that have degree $k$, then $p_k$ is the probability that a node chosen uniformly at random has degree $k$. 
-If we plot a histogram of $p_k$ then this histogram is the degree distribution for  the network. 
-Instead of a histogram plot,  we show node degree data in cumulative distribution  function (CDF) plot which can be expressed as:
-\begin{equation}
-P_k = \sum_{k'=k}^{\infty} p_{k'}.
-\end{equation}
-The CDF plot has advantages over the node degree histogram because it does not suffer from binning problems  \cite{newman2003structure}.
+%The degree of a node in a network is the number of edges connected to that node. 
+%If we define $p_k$ as the  fraction of nodes in the network that have degree $k$, then $p_k$ is the probability that a node chosen uniformly at random %has degree $k$. 
+%If we plot a histogram of $p_k$ then this histogram is the degree distribution for  the network. 
+%Instead of a histogram plot,  we show node degree data in cumulative distribution  function (CDF) plot which can be expressed as:
+%\begin{equation}
+%P_k = \sum_{k'=k}^{\infty} p_{k'}.
+%\end{equation}
+%The CDF plot has advantages over the node degree histogram because it does not suffer from binning problems  \cite{newman2003structure}.
 
-We do not know a priori if our data are power-law distributed. 
-Simply calculating the estimated scaling parameter gives no indication of  whether the power-law is a good model.  
+We want to know the power-law distribution of the measured Bittorrent networks, and we do not know a priori if our data are power-law distributed.
+Simply calculating the estimated scaling parameter gives no indication of whether the power-law is a good model.  
 To test the applicability of a power-law distribution, we use the goodness-of-fit test as described by Clauset \textit{et al}. \cite{clauset2009power}. 
 First, we fit data to the power-law model and calculate the Kolmogorov-Smirnov (KS) statistic for this fit. 
 Second, we generate power-law synthetic data sets based on the scaling parameter $\alpha$ estimation and the lower bound of $x_{min}$. 
