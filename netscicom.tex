@@ -652,7 +652,7 @@ For the detailed calculations of both $x_{min}$ and $alpha$, see Appendix B in \
 %--------------- EXPERIMENT RESULT -------------------------
 \section{Experiment Results}\label{result}
 The CDF of the number of peers for every swarm during measurement show in figure \ref{fig:num_peers}. 
-It is clearly that the number of peers has high variability due to churn in Bittorrent networks. 
+It is clear that the number of peers has high variability due to churn in Bittorrent networks. 
 %The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
 
 \subsection{Power-law Distribution for Node Degree}
@@ -678,8 +678,7 @@ As mentioned before, a good estimation for $x_{min}$ is important to get a overa
 Too small an $x_{min}$ will cause a fit only to the body of the distribution.
 Too high an $x_{min}$ will cause a fit only to the tail of the distribution.
 Figure \ref{fig:fitting} shows the fitting problem example for data set \emph{torrent1} and \emph{torrent3}.
-In \emph{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good.
-While in the same graph we also show the optimum $x_{min}=1$ for \emph{torrent3} and the fit visually seems good.
+In \emph{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good, while in the same graph we also show the optimum $x_{min}=1$ for \emph{torrent3} and the fit visually seems good.
 
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
 This figure explain that from KS statistics point of view around $45\%$ of Bitorrent networks do not follow a power-law model.
@@ -758,7 +757,7 @@ We address these concerns next.
 
 \subsection{Alternative Distributions}
 Even if we have estimated the power-law parameter properly and the fit is decent, it does not mean the power-law model is good.
-There are always possibilities that non power-law models are better than the power-law model.
+It is always possible that non power-law models are better than the power-law model.
 We use the likelihood ratio test \cite{vuong1989likelihood} to see whether other distributions can give better parameter estimation.
 %The general likelihood ratio test statistic asymptotically has a standard Gaussian distribution when the competing models are equally good.
 %We now hypothesize that the the smaller family of power-law distributions may give a better fit to our data sets. 
