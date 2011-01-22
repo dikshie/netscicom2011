@@ -366,7 +366,7 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 %\title{Bare Demo of IEEEtran.cls for Conferences}
-\title{A Temporal View of The Topology of Dynamic Bittorrent Swarms.}
+\title{A Temporal View of The Topology of Dynamic Bittorrent Swarms}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
@@ -497,16 +497,29 @@ The Bittorrent system is different from other P2P systems.
 The Bittorrent protocol does not offer peer traversal and the Bittorrent tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
 While a crawler can be used in other P2P networks, such as Gnutella, in Bittorrent we cannot easily use a crawler to discover topology, making direct measurement of the topology difficult.
 
-In this paper we describe our ``in-vivo" experiment study of the impact and topological properties of Bittorrent peers, such as node degree and clustering coefficient.  
-%Studying topological properties of Bittorrent peers may lead us to find a way how to improve Bittorrent systems itself e.g., robustness. 
-While some Bittorrent experiments have built small Bittorrent networks on testbeds such as PlanetLab and OneLab, our experiments collect data from the real world. 
-We used Bittorrent's Peer Exchange (PEX) messages to infer the overlay topology of swarms that are listed on a Bittorrent tracker claiming to be the largest Bittorrent tracker on the Internet \cite{piratebay}\cite{zhang2010unraveling}.
-Our contribution: is the design of a rigorous and simple method for infering Bitorrent network. 
-We show its validity by simulations.
-To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
+In this paper we describe our study of Bittorrent networks, where real-word Bittorrent swarms were measured using a rigorous and simple method in order to understand the Bittorrent network topology. 
+To our knowledge, our approach is the first to perform such a study on real-world Bittorrent network topologies. 
+We used the Bittorrent Peer Exchange (PEX) messages to infer the topology of Bittorrent swarms listed on a Bittorrent tracker claiming to be the largest Bittorrent network on the Internet  \cite{piratebay}\cite{zhang2010unraveling}, instead of building small Bittorrent networks on testbeds such as PlanetLab and OneLab as the previous work did. 
+We also performed simulations using the same approach to show the validity of the inferred topology  resulted from the PEX messages by comparing it with the topology of the simulated network.
 
-Our findings in this work shed light into puzzling, not yet explained, that  Bittorrent networks can be described by power-law with exponential cut-off random networks.
-This surprising result may contradict earlier findings and our simulations demonstrate this same phenomenon, suggesting that these results are not simply measurement artifacts.
+%In this paper we describe our ``in-vivo" experiment study of the impact and topological properties of Bittorrent peers, such as node degree and clustering coefficient.  
+%Studying topological properties of Bittorrent peers may lead us to find a way how to improve Bittorrent systems itself e.g., robustness. 
+%While some Bittorrent experiments have built small Bittorrent networks on testbeds such as PlanetLab and OneLab, our experiments collect data from the real world. 
+%We used Bittorrent's Peer Exchange (PEX) messages to infer the overlay topology of swarms that are listed on a Bittorrent tracker claiming to be the largest Bittorrent tracker on the Internet \cite{piratebay}\cite%{zhang2010unraveling}.
+%Our contribution: is the design of a rigorous and simple method for infering Bitorrent network. 
+%We show its validity by simulations.
+%To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
+
+Our findings also give another contribution. 
+We show that a power-law with exponential cut-off distribution is a better model than a pure power-law distribution. 
+In terms of the clustering property, we show Bittorrent networks is more of a random network than a scale-free network. 
+While these results may contradict earlier findings, our simulations also demonstrated the same phenomenon.
+
+The rest of this paper is organized as follows. We first briefly explain the Bittorrent PEX, followed by the experiment methodology to infer Bittorrent network topologies using PEX. 
+In the analysis, this paper looks into the power-law distribution and an alternative distribution to power-law. 
+This paper also inspects the clustering property.
+%Our findings in this work shed light into puzzling, not yet explained, that  Bittorrent networks can be described by power-law with exponential cut-off random networks.
+%This surprising result may contradict earlier findings and our simulations demonstrate this same phenomenon, suggesting that these results are not simply measurement artifacts.
 
 %------------BACKGROUND and RELATED WORK -------------------
 \section{Bittorrent Peer Exchange}\label{background}
@@ -681,7 +694,7 @@ Figure \ref{fig:fitting} shows the fitting problem example for data set \emph{to
 In \emph{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good, while in the same graph we also show the optimum $x_{min}=1$ for \emph{torrent3} and the fit visually seems good.
 
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
-This figure explain that from KS statistics point of view around $45\%$ of Bitorrent networks do not follow a power-law model.
+This figure shows that from the K-S statistics point of view around $45\%$ of Bitorrent networks do not follow a power-law model at any given point in time.
 %A magnified view CDF value at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
 %This figure explain that every swarm has different number of $p$ value $\ge 0.1$.
 %Some Bittorrent swarms do not exhibit power-law model and some others show the plausibility of power-law model.
@@ -694,7 +707,7 @@ We address these concerns next.
 \begin{figure}
 \centering
 \epsfig{file=matlab/powerlaws_full_v0.0.9-2010-01-24/output.eps, width=3.2in}
-\caption{Node degree fit for snapshots of two torrents, with three fits shown in logarithm scale. Torrent1: for $x_{min}=1$ , $\alpha = 2.9$, and $p=0.01$. For $x_{min}=2$ , $\alpha = 2.11$, and $p = 0.01$. Torrent3: for $x_{min}=1$, $\alpha = 2.1$, and $p = 0.1$. }
+\caption{Node degree fit for snapshots of two torrents, with three fits shown in log scale. Torrent1: for $x_{min}=1$ , $\alpha = 2.9$, and $p=0.01$. For $x_{min}=2$ , $\alpha = 2.11$, and $p = 0.01$. Torrent3: for $x_{min}=1$, $\alpha = 2.1$, and $p = 0.1$. }
 \label{fig:fitting}
 \vspace{-2mm}
 \end{figure}
@@ -703,7 +716,8 @@ We address these concerns next.
 \centering
 %\epsfig{file=netscicom-graphs/20-data/cdf-total-p.eps, height=2in, width=3.2in}
 \epsfig{file=netscicom-graphs/20-data/aggregate-p-cdf.eps, height=2in, width=3.2in}
-\caption{CDF p value of KS statistics. It shows that across our entire set of Bittorrent snapshots, around $45\%$ of the time a power-law distribution is not a good fit for the data. Inset figure shows CDF p value for each torrent. The dash line on p value = 0.1 is the threshold.} 
+\caption{CDF plot $p$ value of K-S statistics. It shows that across our entire set of Bittorrent snapshots, around $45\%$ of the time a power-law distribution is not a good fit for the data. 
+The inset figure shows the CDF plot $p$ value for each torrent. The dash line on $p$ value = 0.1 is the threshold.} 
 \label{fig:cdf-p}
 \vspace{-2mm}
 \end{figure}
@@ -734,7 +748,9 @@ We address these concerns next.
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho.eps, height=2in, width=3.2in}
-\caption{Scatter of p-value vs $\rho$ value. In this figure we define area 1: $rho$ value $<0.1$ and $p$ value $>0$, area 2: $rho$ value $>0.1$ and $p$ value $<0.1$, area 3: $rho$ and $p$ value $>0.1$. $52\%$ of the points lie in area 1, $24\%$ of the points lie in area 2 and $24\%$ of the points lie in area 3.} 
+\caption{Scatter plot of $p$ value vs $\rho$ value. 
+	Points in area 1 are topology time samples for which a power-law with exponential cut-off is a more plausible model than a power-law.
+	In area 3, a pure power-law is more plausible than power-law with exponential cut-off, while in area 2 the results are ambiguous.} 
 \label{fig:scatter-pvalue-vs-rho}
 \vspace{-2mm}
 \end{figure}
@@ -742,7 +758,7 @@ We address these concerns next.
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho-4region.eps, height=2in, width=3.2in}
-\caption{Scatter of p-value vs loglikelihood ratio (LR) for $\rho < 0.1$. In this figure we define area 1: LR=positive and $p$ value $<0.1$, area 2: LR=positive and $p$ value $>0.1$, area 3: LR=negative and $p$ value $<0.1$, area 4: LR=negative and $p$ value $>0.1$. There are no points in area 1 and area 3; instead $42\%$ of the points lie in area 3 and $58\%$ of the points lie in area 4.} 
+\caption{Scatter plot of $p$ value vs loglikelihood ratio (LR) for $\rho < 0.1$. In this figure we define area 1: LR=positive and $p$ value $<0.1$, area 2: LR=positive and $p$ value $>0.1$, area 3: LR=negative and $p$ value $<0.1$, area 4: LR=negative and $p$ value $>0.1$. There are no points in area 1 and area 3; instead $42\%$ of the points lie in area 3 and $58\%$ of the points lie in area 4.} 
 \label{fig:scatter-pvalue-vs-lr-for-rho-le-01}
 \vspace{-2mm}
 \end{figure}
@@ -779,11 +795,11 @@ Area 3: $\rho$ value $>0.1$ and  $p$ value $>0.1$
 This division will make us easier to see how sparse the points are in each area and to see how many points fall into $\rho$ value $<0.1$.
 As mentioned before $\rho$ value $<0.1$ is an indication of alternative model may be plausible for data sets.
 In this figure we do not include loglikelihood signs. 
-$52\%$ points lie in area 1.
+$52\%$ of the points lie in area 1.
 %We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
 
 Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$.
-We divide the figure into four areas: area 1, area 2, area 3, and area 4  with green lines as borders.
+We divide the figure into four areas: area 1, area 2, area 3, and area 4  with green lines as borders to see how sparse the points in each area.
 Area 1: LR=positive sign and $p$ value $<0.1$.
 Area 2: LR=positive sign and $p$ value $>0.1$.
 Area 3: LR=negative sign and $p$ value $<0.1$.
@@ -828,7 +844,7 @@ Considering only the low clustering coefficient, the Bittorrent topologies seem 
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/cdf-clustering.eps, height=2in, width=3.2in}
-\caption{CDF of the clustering coefficient. It is clearly show that Bittorrent networks have low clustering coefficient.} 
+\caption{CDF of the clustering coefficient for each torrent. It is clearly show that Bittorrent networks have low clustering coefficient.} 
 \label{fig:cdf-clustering}
 \vspace{-2mm}
 \end{figure}
