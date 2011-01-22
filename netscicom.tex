@@ -452,7 +452,7 @@ dikshie@sfc.wide.ad.jp \quad\quad husni@ai3.net \quad\quad rdv@sfc.wide.ad.jp \q
 \begin{abstract}
 This paper describes an experimental study of the overlay topologies of real-world Bittorrent networks, focusing on the activity of the nodes of its P2P topology and especially their dynamic relationships. 
 Peer Exchange Protocol (PEX) messages are analyzed to infer topologies and their properties, capturing the variations of their behavior.  
-Our measurements, verified using the Kolmogorov-Smirnov goodness of fit test and the likelihood ratio test and confirmed via simulation, show that a power-law with exponential cutoff is more plausible model than a pure power law distribution.  
+Our measurements, verified using the Kolmogorov-Smirnov goodness of fit test and the likelihood ratio test and confirmed via simulation, show that a power-law with exponential cutoff is more plausible model than a pure power-law distribution.  
 We also found that the average clustering coefficient is very low, supporting this observation.  
 Bittorrent swarms are far more dynamic than has been recognized previously, potentially impacting attempts to optimize the performance of the system as well as the accuracy of simulations and analyses.
 \end{abstract}
@@ -494,9 +494,10 @@ The Bittorrent system is different from other P2P systems.
 The Bittorrent protocol does not offer peer traversal and the Bittorrent tracker also does not know about topologies since peers never send information to the tracker concerning their connectivity with other peers. 
 While a crawler can be used in other P2P networks, such as Gnutella, in Bittorrent we cannot easily use a crawler to discover topology, making direct measurement of the topology difficult.
 
-In this paper we describe our study of Bittorrent networks, where real-word Bittorrent swarms were measured using a rigorous and simple method in order to understand the Bittorrent network topology. 
+In this paper we describe our study of Bittorrent networks, where real-world Bittorrent swarms were measured using a rigorous and simple method in order to understand the Bittorrent network topology. 
 To our knowledge, our approach is the first to perform such a study on real-world Bittorrent network topologies. 
 We used the Bittorrent Peer Exchange (PEX) messages to infer the topology of Bittorrent swarms listed on a Bittorrent tracker claiming to be the largest Bittorrent network on the Internet  \cite{piratebay}\cite{zhang2010unraveling}, instead of building small Bittorrent networks on testbeds such as PlanetLab and OneLab as the previous work did. 
+%This study employs sampling to accommodate the large scale and high fluctuations in Bittorrent systems. 
 We also performed simulations using the same approach to show the validity of the inferred topology  resulted from the PEX messages by comparing it with the topology of the simulated network.
 
 %In this paper we describe our ``in-vivo" experiment study of the impact and topological properties of Bittorrent peers, such as node degree and clustering coefficient.  
@@ -507,8 +508,7 @@ We also performed simulations using the same approach to show the validity of th
 %We show its validity by simulations.
 %To our knowledge, our approach is the first study of the real-world Bittorrent overlay topology.
 
-Our findings also give another contribution. 
-We show that a power-law with exponential cut-off distribution is a better model than a pure power-law distribution. 
+In addition to demonstrating the validity of our measurement methods, we show that a power-law with exponential cut-off distribution is a better model than a pure power-law distribution. 
 In terms of the clustering property, we show Bittorrent networks is more of a random network than a scale-free network. 
 While these results may contradict earlier findings, our simulations also demonstrated the same phenomenon.
 
@@ -597,7 +597,7 @@ Our sampled peers set through PEX messages exchange can observe about $70\%$ of 
 This observation is consistent with \cite{wu2010understanding}.
 
 %--------------- EXPERIMENT METHODOLOGY ----------------
-\subsection{Experiment Methodology}
+\subsection{Experimental Methodology}
 We crawled top 35 TV series torrent from the piratebay, which claims to be the biggest torrent tracker on the Internet.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
@@ -614,7 +614,7 @@ It implies that our data set is independent to measurement location and a limite
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/cdf-num.eps, height=2in, width=3.2in}
-\caption{CDF number of peers for every swarm during measurement with x to y time samples for each torrent. It is clearly show high variation number of peers in every swarm due to churn in Bittorrent network.} 
+\caption{CDF plot of number of peers for every swarm during measurement with check data x to y time samples for each torrent. It  clearly shows high variation number of peers in every swarm due to churn in Bittorrent networks.} 
 \label{fig:num_peers}
 \vspace{-2mm}
 \end{figure}
@@ -784,13 +784,13 @@ For concrete explanation and real-world examples, we refer the readers to \cite{
 
 Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho > 0.1$ means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho  < 0.1$ and sign of loglikelihood ratio = negative means that there is a significant different in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho < 0.1$ and sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
 
-Figure \ref{fig:scatter-pvalue-vs-rho} shows a scatter plot our data: $p$ value vs $\rho$ value.
-We divide the figure into three areas: area 1, area 2, and area 4 with green line as a border. 
+Figure \ref{fig:scatter-pvalue-vs-rho} shows a scatter plot of our data: $p$ value vs $\rho$ value.
+We divide the figure into three areas: area 1, area 2, and area 3.
 Area 1: $\rho$ value $<0.1$ and $p$ value $>0$. 
 Area 2: $\rho$ value $>0.1$ and $p$ value $<0.1$
 Area 3: $\rho$ value $>0.1$ and  $p$ value $>0.1$ 
 This division will make us easier to see how sparse the points are in each area and to see how many points fall into $\rho$ value $<0.1$.
-As mentioned before $\rho$ value $<0.1$ is an indication of alternative model may be plausible for data sets.
+For points in area 1, an alternative model may be plausible for data sets.
 In this figure we do not include loglikelihood signs. 
 $52\%$ of the points lie in area 1.
 %We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
@@ -801,9 +801,9 @@ Area 1: LR=positive sign and $p$ value $<0.1$.
 Area 2: LR=positive sign and $p$ value $>0.1$.
 Area 3: LR=negative sign and $p$ value $<0.1$.
 Area 4: LR=negative sign and $p$ value $>0.1$. 
-In this figure, we see that no points lie in area 1 and area 2 (LR=possitive sign) instead in detail  $58\%$ data lie in area 3 and $42\%$ data lie in area 4.
+In this figure, we see that no points lie in area 1 and area 2 (LR=positive sign) instead $58\%$ data lie in area 3 and $42\%$ data lie in area 4.
 This figure gives us an explanation that the alternative model is better.  
-Althought in the case $p$ value $<0.1$ we reject power-law as the plausible model, the alternative model is still better than the power-law model. 
+Although in the case $p$ value $<0.1$ we reject power-law as the plausible model, the alternative model is still better than the power-law model. 
 
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 %Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
@@ -813,7 +813,7 @@ Althought in the case $p$ value $<0.1$ we reject power-law as the plausible mode
 %Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
 %We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
 %We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
-This observation clearly demonstrate that comparing the model to other models is a very complex task in highly dynamic networks.
+These observations clearly demonstrate that comparing the model to other models is a very complex task in highly dynamic networks.
 
 \subsection{Clustering Coefficient}\label{clusteringcoef}
 
@@ -895,7 +895,7 @@ We have investigated the properties of Bittorrent overlay topologies from the po
 We obtain instantaneous snapshots of the active topology of the Bittorrent network over a month.
 We cope with the dynamics of the overlay by sampling peer properties. 
 Our results agree in some particulars and disagree in others with prior published work on isolated testbed experiments on Bittorrent, suggesting that more work is required to fully model the behavior of real-world Bittorrent networks.
-Unlike \cite{dale2008evolution}, our findings of this work is that the node degree of the graph formed in Bittorrent swarm can be described by power law with exponential cut-off and low clustering observation implies Bittorrent networks are close to random networks.
+Unlike \cite{dale2008evolution}, we find that the node degree of the graph formed in Bittorrent swarm can be described by power law with exponential cut-off and low clustering observation implies Bittorrent networks are close to random networks.
 Some areas of improvement that we have identified for future work are: more correlation analysis number of peers with $\alpha$ and $p$ value, continued characterization with NATed peers, wider likelihood ratio test with other models and comparing the results with simulation for global graph properties such as distance distribution and spectrum.
 We hope to incorporate these properties into a complete $dK$ series for the evolution of a real-world Bittorrent overlay as it evolves over time \cite{mahadevan2006systematic}. 
 We conclude that further work throughout the community is necessary to continue to improve the agreement of simulation and controlled experiment with the real world, and that such work will impact our understanding of Bittorrent performance and its effects on the Internet.
@@ -903,7 +903,7 @@ We conclude that further work throughout the community is necessary to continue 
 
 \section*{Acknowledgements}
 %This research was supported by The Ministry of Education, Culture, Sports, Science and Technology of Japan. 
-The Authors would like to thank to Daniel Stutzbach for help on graph sampling, Aaron Clauset for help on loglikelihood test and power-law Matlab code, Sue Moon and Joe Touch for suggestions.
+We thank Daniel Stutzbach for help on graph sampling, Aaron Clauset for help on loglikelihood test and power-law Matlab code, Sue Moon and Joe Touch for suggestions.
 
 \bibliographystyle{IEEEtran}
 \bibliography{netscicom}
