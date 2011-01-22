@@ -544,7 +544,7 @@ Based on a survey by the authors of several Bittorent client web sites, it appea
 %The PEX message contains the set of peers that are currently connected.
 
 However,  there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
-Therefore there are differences, e.g. for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
+Therefore there are differences, e.g., for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
 In other Bittorrent clients, the number of IP address and port pairs is decided based on the size of the PEX message.  
 This implementation difference may affect the ultimate behavior of the network.
 
@@ -665,7 +665,7 @@ The CDF of the number of peers for every swarm during measurement show in figure
 It is clear that the number of peers has high variability due to churn in Bittorrent networks. 
 %The number of peers will have a relationship with the clustering coefficient, which will be explained in section \ref{clusteringcoef}.
 
-\subsection{Power-law Distribution for Node Degree}
+\subsection{Power-law Distribution of Node Degree}
 %The degree of a node in a network is the number of edges connected to that node. 
 %If we define $p_k$ as the  fraction of nodes in the network that have degree $k$, then $p_k$ is the probability that a node chosen uniformly at random %has degree $k$. 
 %If we plot a histogram of $p_k$ then this histogram is the degree distribution for  the network. 
@@ -691,7 +691,7 @@ Figure \ref{fig:fitting} shows the fitting problem example for data set \emph{to
 In \emph{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good, while in the same graph we also show the optimum $x_{min}=1$ for \emph{torrent3} and the fit visually seems good.
 
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
-This figure shows that from the K-S statistics point of view around $45\%$ of Bitorrent networks do not follow a power-law model at any given point in time.
+This figure shows that from the K-S statistics point of view around $45\%$ of the time of Bitorrent networks do not follow a power-law model at any given point in time.
 %A magnified view CDF value at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
 %This figure explain that every swarm has different number of $p$ value $\ge 0.1$.
 %Some Bittorrent swarms do not exhibit power-law model and some others show the plausibility of power-law model.
@@ -755,7 +755,7 @@ The inset figure shows the CDF plot $p$ value for each torrent. The dash line on
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho-4region.eps, height=2in, width=3.2in}
-\caption{Scatter plot of $p$ value vs loglikelihood ratio (LR) for $\rho < 0.1$. In this figure we define area 1: LR=positive and $p$ value $<0.1$, area 2: LR=positive and $p$ value $>0.1$, area 3: LR=negative and $p$ value $<0.1$, area 4: LR=negative and $p$ value $>0.1$. There are no points in area 1 and area 3; instead $42\%$ of the points lie in area 3 and $58\%$ of the points lie in area 4.} 
+\caption{Scatter plot of $p$ value vs loglikelihood ratio (LR) for $\rho < 0.1$. In this figure we define area 1: LR=positive and $p$ value $<0.1$, area 2: LR=positive and $p$ value $>0.1$, area 3: LR=negative and $p$ value $<0.1$, area 4: LR=negative and $p$ value $>0.1$. There are no points in area 1 and area 2, meaning that the power-law model is not a better model for all data; instead $42\%$ of the points lie in area 3 and $58\%$ of the points lie in area 4.} 
 \label{fig:scatter-pvalue-vs-lr-for-rho-le-01}
 \vspace{-2mm}
 \end{figure}
@@ -804,7 +804,6 @@ Area 4: LR=negative sign and $p$ value $>0.1$.
 In this figure, we see that no points lie in area 1 and area 2 (LR=positive sign) instead $58\%$ data lie in area 3 and $42\%$ data lie in area 4.
 This figure gives us an explanation that the alternative model is better.  
 Although in the case $p$ value $<0.1$ we reject power-law as the plausible model, the alternative model is still better than the power-law model. 
-
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 %Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
 %It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
@@ -813,11 +812,11 @@ Although in the case $p$ value $<0.1$ we reject power-law as the plausible model
 %Some swarms have less than $20\%$ of $\rho$ value less than $0.1$ and some others have up to $85\%$ of $\rho$ value less than $0.1$.
 %We see  some snapshots have $\rho$ value less than 0.1 and we can say that on that snapshots power-law with exponential cut-off can be ruled out. 
 %We argue that the power-law with exponential cut-off occurs as implication of node degree bound in Bittorrent networks since a node wants only to attach to neighbors who will give best download rate and Bitorrent client software itself has default maximum connection limit.
-These observations clearly demonstrate that comparing the model to other models is a very complex task in highly dynamic networks.
+These observations clearly demonstrates that comparing the model to other models is a very complex task in highly dynamic networks.
 
 \subsection{Clustering Coefficient}\label{clusteringcoef}
 
-Clustering describes robustness in topology. 
+Clustering describes the topology robustness. 
 It has practical implications; for example, if node A is connected to node B and node B to node C, then there is a probability that node A will also be
 connected to node C, improving the robustness of the network against the failure of a connection.  
 Clustering is quantified by a node clustering coefficient as follows:
@@ -851,7 +850,7 @@ Considering only the low clustering coefficient, the Bittorrent topologies seem 
 Here we use simulations to compare the overlay topology properties based  on our real-world experiments. 
 We set the maximum peer set size to 80, the minimum number of neighbors to 20, and the maximum number of outgoing connection to 80. In our simulation, the result is quite easy to get since we are on a controlled system;  we can directly read the  global topology properties from our results. 
 We also have the simulated PEX messages. We compare the global overlay topology properties as the final result from the simulator with the overlay topology that we get from PEX on the same simulator.
-Figure. \ref{fig:simulation} shows the $\alpha$ estimate and $p$ value both for the global result and the PEX result from our simulator. 
+Figure \ref{fig:simulation} shows the $\alpha$ estimate and $p$ value both for the global result and the PEX result from our simulator. 
 It clearly shows that global result and the PEX result from the simulator produce very low $p$ values. 
 We calculate the Spearman correlation for both $\alpha$ values from the global result and the PEX result. 
 The Spearman rank correlation coefficient is a non-parametric correlation measure that assesses the relationship between two variables
