@@ -62,7 +62,7 @@
 % should be used if it is desired that the figures are to be displayed in
 % draft mode.
 %
-\documentclass[10pt,conference,letterpaper]{IEEEtran}
+\documentclass[10pt,conference,letterpaper,final]{IEEEtran}
 % Add the compsoc option for Computer Society conferences.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -356,8 +356,8 @@
 \def\@oddfoot{}%
 \def\@evenfoot{}}
 \makeatother
-\pagestyle{headings} 
-
+%\pagestyle{headings} 
+\pagestyle{empty}
 \begin{document}
 %\pagenumbering{arabic}
 
@@ -452,7 +452,7 @@ dikshie@sfc.wide.ad.jp \quad\quad husni@ai3.net \quad\quad rdv@sfc.wide.ad.jp \q
 \begin{abstract}
 This paper describes an experimental study of the overlay topologies of real-world Bittorrent networks, focusing on the activity of the nodes of its P2P topology and especially their dynamic relationships. 
 Peer Exchange Protocol (PEX) messages are analyzed to infer topologies and their properties, capturing the variations of their behavior.  
-Our measurements, verified using the Kolmogorov-Smirnov goodness of fit test and the likelihood ratio test and confirmed via simulation, show that a power-law with exponential cutoff is more plausible model than a pure power-law distribution.  
+Our measurements, verified using the Kolmogorov-Smirnov goodness of fit test and the likelihood ratio test and confirmed via simulation, show that a power-law with exponential cutoff is a more plausible model than a pure power-law distribution.  
 We also found that the average clustering coefficient is very low, supporting this observation.  
 Bittorrent swarms are far more dynamic than has been recognized previously, potentially impacting attempts to optimize the performance of the system as well as the accuracy of simulations and analyses.
 \end{abstract}
@@ -496,7 +496,7 @@ While a crawler can be used in other P2P networks, such as Gnutella, in Bittorre
 
 In this paper we describe our study of Bittorrent networks, where real-world Bittorrent swarms were measured using a rigorous and simple method in order to understand the Bittorrent network topology. 
 To our knowledge, our approach is the first to perform such a study on real-world Bittorrent network topologies. 
-We used the Bittorrent Peer Exchange (PEX) messages to infer the topology of Bittorrent swarms listed on a Bittorrent tracker claiming to be the largest Bittorrent network on the Internet  \cite{piratebay}\cite{zhang2010unraveling}, instead of building small Bittorrent networks on testbeds such as PlanetLab and OneLab as the previous work did. 
+We used the Bittorrent Peer Exchange (PEX) messages to infer the topology of Bittorrent swarms listed on a Bittorrent tracker claiming to be the largest Bittorrent network on the Internet  \cite{piratebay}\cite{zhang2010unraveling}, instead of building small Bittorrent networks on testbeds such as PlanetLab and OneLab as other researchers have done. 
 %This study employs sampling to accommodate the large scale and high fluctuations in Bittorrent systems. 
 We also performed simulations using the same approach to show the validity of the inferred topology  resulted from the PEX messages by comparing it with the topology of the simulated network.
 
@@ -747,7 +747,7 @@ The inset figure shows the CDF plot $p$ value for each torrent. The dash line on
 \epsfig{file=netscicom-graphs/20-data/gabung-korelasi-p-rho.eps, height=2in, width=3.2in}
 \caption{Scatter plot of $p$ value vs $\rho$ value. 
 	Points in area 1 are topology time samples for which a power-law with exponential cut-off is a more plausible model than a power-law.
-	In area 3, a pure power-law is more plausible than power-law with exponential cut-off, while in area 2 the results are ambiguous.} 
+	In area 3, a pure power-law may be more plausible than power-law with exponential cut-off, while in area 2 the results are ambiguous.} 
 \label{fig:scatter-pvalue-vs-rho}
 \vspace{-2mm}
 \end{figure}
@@ -864,7 +864,6 @@ The Spearman rank correlation test gives $0.38 \leq \rho \leq 0.5$, which we con
 The simulator confirms that the PEX method can be used to estimate $\alpha$.} 
 \label{fig:simulation}
 \end{figure}
-
 
 \section{Related Work}\label{relatedworks}
 Bittorrent protocol performance has been explored deeply by several researchers \cite{guo2005measurements}\cite{legout2006rarest}\cite{pouwelse2004measurement}\cite{tian2007modeling}.  
