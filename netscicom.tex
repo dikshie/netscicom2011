@@ -599,6 +599,8 @@ This observation is consistent with \cite{wu2010understanding}.
 %--------------- EXPERIMENT METHODOLOGY ----------------
 \subsection{Experimental Methodology}
 We crawled top 35 TV series torrent from the piratebay, which claims to be the biggest torrent tracker on the Internet.
+Although these were top 35 TV series torrent, almost of these torrent were in stable phase.
+The stable phase are much dominant than bootstrapping and decay phase of Bittorrent's lifetime.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
 Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library.  %(used by uTorrent, Deluge, and other Bittorrent clients).
@@ -687,7 +689,7 @@ If $p \geq 0.1$ then a power-law model is a good model for the data set and if $
 As mentioned before, a good estimation for $x_{min}$ is important to get a overall good fit.
 Too small an $x_{min}$ will cause a fit only to the body of the distribution.
 Too high an $x_{min}$ will cause a fit only to the tail of the distribution.
-Figure \ref{fig:fitting} shows the fitting problem example for data set \emph{torrent1} and \emph{torrent3}.
+As example to provide estimated value of $\alpha$  and shows the fitting problem, Figure \ref{fig:fitting} shows that  for data set \emph{torrent1} and \emph{torrent3}.
 In \emph{torrent1} the optimum $x_{min}=2$ and $\alpha=2.11$ if we put $x_{min}=1$ we will get $\alpha=2.9$ and the fit visually seems not good, while in the same graph we also show the optimum $x_{min}=1$ for \emph{torrent3} and the fit visually seems good.
 
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
@@ -804,6 +806,8 @@ Area 4: LR=negative sign and $p$ value $>0.1$.
 In this figure, we see that no points lie in area 1 and area 2 (LR=positive sign) instead $58\%$ data lie in area 3 and $42\%$ data lie in area 4.
 This figure gives us an explanation that the alternative model is better.  
 Although in the case $p$ value $<0.1$ we reject power-law as the plausible model, the alternative model is still better than the power-law model. 
+The rising of power-law with exponential cut-off intuitively shows that peers are not willing to maintain high degrees or load.
+Therefore, \textit{cutoffs} on number of degrees are imposed by peers.
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 %Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
 %It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
