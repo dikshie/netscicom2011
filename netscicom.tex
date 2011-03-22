@@ -558,7 +558,7 @@ This implementation difference may affect the ultimate behavior of the network.
 %Here we present a simple way to get peer information from a  Bittorrent swarm. 
 We used PEX to collect peer neighbors information  (see Figure \ref{fig:pexworks}) and then we describe the network formed in terms of properties such as node degree and average clustering. 
 Besides collecting data from real Bittorrent networks, we ran simulations similar to these of Al-Hamra \textit{et al}. \cite{al2009swarming}. 
-In these simulations, we assumed that peer arrivals and departures (churns) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
+In these simulations, we assumed that peer arrivals and departures (churn) follow an exponential distribution as explained by Guo \textit{et al}. \cite{guo2005measurements}. 
 For simplification, we assumed that nodes are not behind a NAT.
 Since we are only interested in the construction of the overlay topology, we argue that our simulations are thorough enough to explain the overlay properties.
 
@@ -584,7 +584,7 @@ V_{t0,t_0+\Delta} = \bigcup_{t=t_0}^{t_0+\tau} V_t.
  \label{eq:samplingvertices}
  \end{equation}
 
-Stutzbach \textit{et al}. \cite{stutzbach2007sampling} showed that  Equation (\ref{eq:samplingvertices}) is only appropriate for exponentially distributed  peer session lengths and as we know from existing measurements Bittorrent networks peer session lengths have very high variation \cite{guo2005measurements}.  
+Stutzbach \textit{et al}. \cite{stutzbach2007sampling} showed that  Equation (\ref{eq:samplingvertices}) is only appropriate for exponentially distributed  peer session lengths but we know from existing measurements that Bittorrent networks peer session lengths have very high variation \cite{guo2005measurements}.  
 Equation (\ref{eq:samplingvertices}) focuses on sampling peers instead of peer properties. 
 To cope with that problem we must be able to sample from the same peer more than once at different points in time \cite{stutzbach2007sampling}. 
 We may rewrite our desired sample as
@@ -612,7 +612,7 @@ It implies that our data set is independent to measurement location and a limite
 \begin{figure}
 \centering
 \epsfig{file=netscicom-graphs/20-data/cdf-num.eps, height=2in, width=3.2in}
-\caption{CDF plot of number of peers for every swarm during measurement with 104 to 1400 time samples for each torrent. It  clearly shows high variation number of peers in every swarm due to churn in Bittorrent networks.} 
+\caption{CDF plot of number of peers for every swarm during measurement with 104 to 1400 time samples for each torrent. This clearly shows high variation in the number of peers in every swarm, due to churn in Bittorrent networks.} 
 \label{fig:num_peers}
 \vspace{-2mm}
 \end{figure}
