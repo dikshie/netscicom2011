@@ -539,11 +539,12 @@ learns that now peer A is connected to peer D. Thus the actor knows the properti
 \end{figure}
 PEX is a mechanism introduced in Bittorrent to discover other peers in the swarm, in which two connected peers exchange messages containing a set of connected peers.  
 With PEX, peers only need to use the tracker as an initial source of peers.   
-Based on a survey by the authors of several Bittorent client web sites, it appears that most clients began to introduce PEX in 2007 \cite{client}.
+%Based on a survey by the authors of several Bittorent client web sites, it appears that most clients began to introduce PEX in 2007 \cite{client}.
 %A peer will send a PEX message to other peers that support the PEX protocol. 
 %The PEX message contains the set of peers that are currently connected.
 
-However,  there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
+It appears that most clients began to introduce PEX in 2007  \cite{client}. 
+However, there is no PEX specification, only a kind of informal understanding among Bittorrent client developers.
 Therefore there are differences, e.g., for some Bittorrent clients derived from rasterbar libtorrent \cite{rasterbar}, the PEX message can only contain a maximum of a hundred IP address and port pairs. 
 In other Bittorrent clients, the number of IP address and port pairs is decided based on the size of the PEX message.  
 This implementation difference may affect the ultimate behavior of the network.
