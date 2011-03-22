@@ -782,15 +782,12 @@ For concrete explanation and real-world examples, we refer the readers to \cite{
 
 Under the likelihood ratio test, we compare the pure power-law model to power-law with exponential cut-off, and the $\rho$ value here helps us establish which of three possibilities occurs: (i) $\rho > 0.1$ means there is no significant difference between the likelihood of the data under the two hypotheses being compared and thus neither is favored over the other; if we already rejected the pure power-law model, then this does not necessarily tell us that we also can reject the alternative model; (ii) $\rho  < 0.1$ and the sign of loglikelihood ratio = negative means that there is a significant difference in the likelihoods and that the alternative model is better; if we have already rejected the pure power-law model, then this case simply tells us that the alternative model is better than the bad model we rejected; (iii) if $\rho < 0.1$ and the sign of loglikelihood ratio = positive means that there is a significant difference and that the pure power-law model is better than the alternative; if we have already rejected the pure power-law model, then this case tells us the alternative is even worse than the bad model we already rejected.
 
-Figure \ref{fig:scatter-pvalue-vs-rho} shows a scatter plot of our data: $p$ value vs $\rho$ value.
-We divide the figure into three areas: area 1, area 2, and area 3.
+Figure \ref{fig:scatter-pvalue-vs-rho} shows a $p$ value vs $\rho$ value, scatter plot, and it is divided into three areas.
 Area 1: $\rho$ value $<0.1$ and $p$ value $>0$. 
 Area 2: $\rho$ value $>0.1$ and $p$ value $<0.1$
 Area 3: $\rho$ value $>0.1$ and  $p$ value $>0.1$ 
-This division will make us easier to see how sparse the points are in each area and to see how many points fall into $\rho$ value $<0.1$.
-For points in area 1, an alternative model may be plausible for data sets.
-In this figure we do not include loglikelihood signs. 
-$52\%$ of the points lie in area 1.
+This division will make it easier to see how sparse the points are in each area and to see how many points fall into $\rho$ value $<0.1$.
+This figure shows that $52\%$ of the samples lie in area 1, thus an alternative model may be plausible for these samples.
 %We do not count LR value in that figure instead at least $\rho < 0.1$ is indication that alternative model gives a better fit rather than pure power-law model.
 
 Now we plot $p$ value vs LR as shown in figure \ref{fig:scatter-pvalue-vs-lr-for-rho-le-01} for $\rho < 0.1$.
@@ -799,11 +796,9 @@ Area 1: LR=positive sign and $p$ value $<0.1$.
 Area 2: LR=positive sign and $p$ value $>0.1$.
 Area 3: LR=negative sign and $p$ value $<0.1$.
 Area 4: LR=negative sign and $p$ value $>0.1$. 
-In this figure, we see that no points lie in area 1 and area 2 (LR=positive sign) instead $58\%$ data lie in area 3 and $42\%$ data lie in area 4.
-This figure gives us an explanation that the alternative model is better.  
+In this figure, $58\%$ of the samples lie in area 3 and  $42\%$ lie in area 4, while there is no sample in areas 1 and 2, which means that the alternative model is better.
 Although in the case $p$ value $<0.1$ we reject power-law as the plausible model, the alternative model is still better than the power-law model. 
-The rising of power-law with exponential cut-off intuitively shows that peers are not willing to maintain high degrees or load.
-Therefore, \textit{cutoffs} on number of degrees are imposed by peers.
+We believe that these results are caused by peers are not willing to maintain high degrees or load.
 %In the nested case, if $\rho$ value $\leq 0.1$ the smaller family provides a better model, otherwise there is no evidence that a larger family is needed %to fit the data \cite{clauset2009power} \cite{vuong1989likelihood}. 
 %Instead showing CDF of $\rho$ values for very swarm which have high variation, Figure \ref{fig:cdf-lr} shows the CDF at $\rho$ value $=0.1$ for every swarm. 
 %It is very sparse and it shows that nested comparison is also very dynamic in Bittorrent temporal networks.
