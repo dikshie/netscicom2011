@@ -603,8 +603,7 @@ We joined to the top 35 TV series torrent from the piratebay, which claims to be
 Although these were top 35 TV series torrent, almost all of these torrent were in stable phase, which is more dominant than bootstrapping and decay phase of Bittorrent's lifetime.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
-Our nodes used a modified Rasterbar libtorrent[14], which is the most popular library.  %(used by uTorrent, Deluge, and other Bittorrent clients).
-We modified rasterbar's libtorrent client to become connection greedy, i.e., try to connect to every peer about whom it received information from the tracker and other peers, remove the connection limit, and log PEX messages received from other clients.
+We used a modified rasterbar libtorrent \cite{rasterbar} client that is connection greedy, where the client tries to connect to all peers it knows without a limit on the number of connections, and the client logs PEX messages received from other clients.
 PEX messages sent from old versions of Vuze Bittorrent client contain not only currently connected peers but also its historically connected peers. 
 We can distinguished Vuze Bittorrent clients from the log files.
 To cope with this situation, we do not include old Vuze client in data processing. 
