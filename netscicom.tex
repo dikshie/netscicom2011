@@ -580,16 +580,16 @@ Suppose that a Bittorrent overlay network is a graph $G(V,E)$ with the peers or 
 If we observe the graph in a time series,  i.e., we take samples of the graph, the time-indexed graph is $G_t = G(V_t,E_t)$.   
 We define a measurement window $[t_0,t_0 + \Delta]$ and select peers at random from the set:
  \begin{equation}
-V_{t0,t_0+\Delta} = \bigcup_{t=t_0}^{t_0+\Delta} V_t.
+V_{t0,t_0+\Delta} = \bigcup_{t=t_0}^{t_0+\tau} V_t.
  \label{eq:samplingvertices}
  \end{equation}
 
 Stutzbach \textit{et al}. \cite{stutzbach2007sampling} showed that  Equation (\ref{eq:samplingvertices}) is only appropriate for exponentially distributed  peer session lengths and as we know from existing measurements Bittorrent networks peer session lengths have very high variation \cite{guo2005measurements}.  
-Equation \ref{eq:samplingvertices} focuses on sampling peers instead of peer properties. 
+Equation (\ref{eq:samplingvertices}) focuses on sampling peers instead of peer properties. 
 To cope with that problem we must be able to sample from the same peer more than once at different points in time \cite{stutzbach2007sampling}. 
 We may rewrite our desired sample as
 \begin{equation}
-\ v_{i,t} \in V_t  , t \in [t_0, t_0 + \Delta].
+\ v_{i,t} \in V_t  , t \in [t_0, t_0 + \tau].
 \label{eq:samplingvertices2}
 \end{equation}
 The number of peers in a swarm that is observed by our client is our population. 
