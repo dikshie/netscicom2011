@@ -829,7 +829,7 @@ A network that has a high clustering coefficient and a small average path length
 Newman \cite{newman2003properties} mentions that virus outbreaks spread faster in highly clustered networks. 
 In Bittorrent systems, a previous study \cite{legout2007clustering} mentioned the possibility that Bittorrent's efficiency partly comes from the clustering of peers.
 Figure \ref{fig:cdf-clustering} shows the CDF clustering coefficient value of our data sets.
-Only one torrent exhibits around  $40\%$ of clustering coefficient less than $0.1$, while for the other torrents, more than  $70\%$ are less than $0.1$.
+Only one torrent exhibits clustering coefficient less than $0.1$ for about $40\%$ of the snapshots,, while for the other torrents, more than  $70\%$ are less than $0.1$.
 This low clustering coefficient observation is the same as that observed by Dale \textit{et al}. \cite{dale2008evolution}.
 Considering only the low clustering coefficient, the Bittorrent topologies seem to be close to random graphs.
 \begin{figure}
@@ -843,7 +843,8 @@ Considering only the low clustering coefficient, the Bittorrent topologies seem 
 
 \section{Confirmation via Simulation}\label{simulation}
 Here we use simulations to compare the overlay topology properties based  on our real-world experiments. 
-We set the maximum peer set size to 80, the minimum number of neighbors to 20, and the maximum number of outgoing connection to 80. In our simulation, the result is quite easy to get since we are on a controlled system;  we can directly read the  global topology properties from our results. 
+We set the maximum peer set size to 80, the minimum number of neighbors to 20, and the maximum number of outgoing connections to 80. 
+In our simulation, the result is quite easy to get since we are on a controlled system;  we can directly read the  global topology properties from our results. 
 We also have the simulated PEX messages. We compare the global overlay topology properties as the final result from the simulator with the overlay topology that we get from PEX on the same simulator.
 Figure \ref{fig:simulation} shows the $\alpha$ estimate and $p$ value both for the global result and the PEX result from our simulator. 
 It clearly shows that global result and the PEX result from the simulator produce very low $p$ values. 
@@ -861,9 +862,9 @@ The simulator confirms that the PEX method can be used to estimate $\alpha$.}
 \end{figure}
 
 \section{Related Work}\label{relatedworks}
-Bittorrent protocol performance has been explored extensively in \cite{guo2005measurements}\cite{legout2006rarest}\cite{pouwelse2004measurement}\cite{tian2007modeling}.  
-The rarest first algorithm was discussed in \cite{legout2006rarest}, average download speed was discussed in \cite{pouwelse2004measurement}, peer arrival and departure process was discussed in \cite{guo2005measurements},and the effect of distributon of the peers on the download job progress was discussed in Y.Tian \textit{et al}. \cite{tian2007modeling}.
-The huge numbers of peers sending P2P download requests to random targets on the Internet and anti-P2P companies inject bogus peers through PEX was discussed in Z.Li \textit{et al}. \cite{li2010measurement}.
+Bittorrent protocol performance has been explored extensively \cite{guo2005measurements}\cite{legout2006rarest}\cite{pouwelse2004measurement}\cite{tian2007modeling}.  
+The rarest first algorithm was discussed in \cite{legout2006rarest}, average download speed was discussed in \cite{pouwelse2004measurement}, peer arrival and departure process was discussed in \cite{guo2005measurements} and the effect of distributon of the peers on the download job progress was discussed in Y.Tian \textit{et al}. \cite{tian2007modeling}.
+The huge numbers of peers sending P2P download requests to random targets on the Internet and anti-P2P companies injecting bogus peers through PEX were discussed in Z.Li \textit{et al}. \cite{li2010measurement}.
 Higher upload-to-download ratios in  Bittorrent darknet were discussed in C.Zhang \textit{et al}. \cite{zhang2010bittorrent}.
 Although we know that the topology can have a large impact on performance, to date only a few papers have addressed the issue.
 Urvoy \textit{et al}. \cite{urvoy2007impact} used a discrete event simulator to show that the time to distribute a file in a Bittorrent swarm has a strong relation to the overlay topology.  
@@ -878,7 +879,7 @@ First, power-law claims must be handled carefully.
 Many steps are required to confirm the power-law behavior, including alternative model checking, and we must be prepared for disappoinment since other models may give a better fit. 
 Second, our methodology relies on real work measurement combine with simulation for validation. 
 We are using real swarms from a real and operational Bittorrent tracker. 
-This real world measurement will reflect different type of clients connected to our swarm and each client has a different behavior. 
+This real-world measurement will reflect different types of clients connected to our swarm, and each client has a different behavior. 
 %Each client might run on a different operating system, and of course clients are spread geographically. 
 We also face difficult-to-characterize network realities such as NAT and firewalls. 
 Our ability to reproduce key aspects of the topology dynamics suggests that these factors have only limited impact on the topology, somewhat to our surprise. 
