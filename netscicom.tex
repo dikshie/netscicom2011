@@ -599,15 +599,15 @@ This observation is consistent with \cite{wu2010understanding}.
 
 %--------------- EXPERIMENT METHODOLOGY ----------------
 \subsection{Experimental Methodology}
-We joined to the top 35 TV series torrent from the piratebay, which claims to be the biggest torrent tracker on the Internet.
-Although these were top 35 TV series torrent, almost all of these torrent were in stable phase, which is more dominant than bootstrapping and decay phase of Bittorrent's lifetime.
+We joined the top 35 TV series torrents from the piratebay, which claims to be the biggest torrent tracker on the Internet.
+Almost all of these torrents were in steady-state phase, which is more dominant than bootstrapping and decay phase of Bittorrent's lifetime.
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
 We used a modified rasterbar libtorrent \cite{rasterbar} client that is connection greedy, where the client tries to connect to all peers it knows without a limit on the number of connections, and the client logs PEX messages received from other clients.
-Old versions of Vuze Bittorrent clients contain all of peers they connected to in the past, hence these clients should be removed from the data.
+PEX messages from old versions of Vuze Bittorrent clients contain all of peers they connected to in the past, hence these clients should be removed from the data.
 Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation (\ref{eq:samplingvertices2}).
-In terms of connectivity, two popular Bittorrent clients: uTorrent and Vuze, by default try to connect to peer candidates randomly without any preference thus we have random data sets.
-It implies that our data set is independent to measurement location and a limited number of measurement locations.
+In terms of connectivity, two popular Bittorrent clients: uTorrent and Vuze, by default try to connect to peer candidates randomly without any preference, thus we have random data sets.
+This implies that our data set is independent of measurement location and the number of measurement locations.
 
 \begin{figure}
 \centering
