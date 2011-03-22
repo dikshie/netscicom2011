@@ -578,7 +578,7 @@ We consider $\tau=3 $ minutes to be a reasonable estimate of minimum session len
 
 Suppose that a Bittorrent overlay network is a graph $G(V,E)$ with the peers or nodes as vertices and connections between the peers as edges. 
 If we observe the graph in a time series,  i.e., we take samples of the graph, the time-indexed graph is $G_t = G(V_t,E_t)$.   
-We define a measurement window $[t_0,t_0 + \Delta]$ and select peers at random from the set:
+We define a measurement window $[t_0,t_0 + \tau]$ and select peers at random from the set:
  \begin{equation}
 V_{t0,t_0+\Delta} = \bigcup_{t=t_0}^{t_0+\tau} V_t.
  \label{eq:samplingvertices}
