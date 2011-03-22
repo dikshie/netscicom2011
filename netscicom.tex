@@ -604,9 +604,7 @@ Although these were top 35 TV series torrent, almost all of these torrent were i
 %We joined to that top 30 TV series swarms and log the connection between peers. 
 %Swams of a new episode of TV series are being created weekly and popular TV series attract many people to join the swarm which make these swarms perfect for our experiments.
 We used a modified rasterbar libtorrent \cite{rasterbar} client that is connection greedy, where the client tries to connect to all peers it knows without a limit on the number of connections, and the client logs PEX messages received from other clients.
-PEX messages sent from old versions of Vuze Bittorrent client contain not only currently connected peers but also its historically connected peers. 
-We can distinguished Vuze Bittorrent clients from the log files.
-To cope with this situation, we do not include old Vuze client in data processing. 
+Old versions of Vuze Bittorrent clients contain all of peers they connected to in the past, hence these clients should be removed from the data.
 Removal of some peers in data processing is valid in terms of sampling with dynamics, see equation \ref{eq:samplingvertices2}.
 We also study the source code of two popular Bittorrent clients, uTorrent (using rasterbar libtorrent source code) and Vuze, in term of peer connectivity.
 Both clients by default try to connect to node candidates randomly without any preference thus we have random data sets.
