@@ -673,30 +673,31 @@ It is clear that the number of peers has  high variability due to churns in Bitt
 %\end{equation}
 %The CDF plot has advantages over the node degree histogram because it does not suffer from binning problems  \cite{newman2003structure}.
 
-We want to know the power-law distribution of the measured Bittorrent networks, and we do not know a priori if our data are power-law distributed.
+We want to know the power-law distribution of the measured Bittorrent networks, and we do not know \textit{a priori} if our data are power-law distributed.
 Simply calculating the estimated scaling parameter gives no indication of whether the power-law is a good model.  
 To test the applicability of a power-law distribution, we use the goodness-of-fit test as described by Clauset \textit{et al}. \cite{clauset2009power}. 
 First, we fit data to the power-law model and calculate the Kolmogorov-Smirnov (KS) statistic for this fit. 
 Second, we generate power-law synthetic data sets based on the scaling parameter $\alpha$ estimation and the lower bound of $x_{min}$. 
 We fit the synthetic data to a power-law model and calculate the KS statistics, then count what fraction of the resulting statistics is larger than the value for the measured data set. 
 This fraction is called the $p$ value.  
-If $p \geq 0.1$ then a power-law model is a good model for the data set and if $p < 0.1$ then power-law is not a good model \cite{clauset2009power}.
+If $p \geq 0.1$ then a power-law model is a good model for the data set, and if $p < 0.1$ then power-law is not a good model.
 
 As mentioned before, a good estimation for $x_{min}$ is important to get a overall good fit.
 Too small an $x_{min}$ will cause a fit only to the body of the distribution.
 Too high an $x_{min}$ will cause a fit only to the tail of the distribution.
-Figure  \ref{fig:fitting} illustrates the fittings for snapshots of \emph{torrent1} and \emph{torrent3}.
-For torrent1, setting $x_{min}=2$  leads to  $\alpha=2.11$ and $\alpha=2.9$ if  $x_{min}=1$; but the later fitting is visually not good, For  \emph{torrent3}, setting $x_{min}=1$ leads to a visually good fit.
+Figure  \ref{fig:fitting} illustrates the fit for snapshots of \emph{torrent1} and \emph{torrent3}.
+For \emph{torrent1}, setting $x_{min}=2$  leads to  $\alpha=2.11$, while $x_{min}=1$ gives $\alpha=2.9$.
+For \emph{torrent1}, xmin = 1 visually does not give a good fit, while for  \emph{torrent3}, setting $x_{min}=1$ leads to a visually good fit.
 
 Figure  \ref{fig:cdf-p} shows the CDF for $p$ values for all data sets. 
-This figure shows that from the K-S statistics point of view around $45\%$ of the time of Bitorrent networks do not follow a power-law model at any given point in time.
+This figure shows that from the K-S statistics point of view, around $45\%$ of the time, Bitorrent networks do not follow a power-law model.
 %A magnified view CDF value at p-value=$0.1$ for every swarm is shown in figure \ref{fig:cdf-p-01}.
 %This figure explain that every swarm has different number of $p$ value $\ge 0.1$.
 %Some Bittorrent swarms do not exhibit power-law model and some others show the plausibility of power-law model.
 
 However these data sets must be interpreted with care. 
-The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size $n=50$ \cite{clauset2009power}. 
-Also, for the goodness-of-fit test, a large $p$ value does not mean the power-law  is the correct distribution for data sets, because there may be other distributions that match the data sets and there is always a possibility that small value of $p$ the distribution will follow a power-law even though the power-law is not the right model\cite{clauset2009power}. 
+The usage of the maximum likelihood estimators for parameter estimation in power-law is guaranteed to be unbiased only in the asymptotic limit of large sample size, and some of our data sets fall below the rule of thumb for sample size, $n=50$ \cite{clauset2009power}. 
+In the goodness-of-fit test, a large $p$ value does not mean the power-law  is the correct distribution for data sets, because there may be other distributions that match the data sets and there is always a possibility that small value of $p$ the distribution will follow a power-law even though the power-law is not the right model\cite{clauset2009power}. 
 We address these concerns next.
 
 \begin{figure}
